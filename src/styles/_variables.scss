@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+
+// Get the color palettes from the cyan-orange theme
+$primary: mat.define-palette(mat.$cyan-palette);
+$accent: mat.define-palette(mat.$orange-palette);
+
+// Colors
+$primary-color: mat.get-color-from-palette($primary);
+$accent-color: mat.get-color-from-palette($accent);
+$secondary-color: #666;
+
+// Breakpoints
+$mobile: 768px;
+$tablet: 1024px;
+
+// Spacing
+$spacing-unit: 0.5rem;
