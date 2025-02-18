@@ -4,11 +4,10 @@ import { Component } from '@angular/core';
   selector: 'lib-resume',
   imports: [],
   template: `
-    <p>
-      resume works!
-    </p>
+    <resume></resume>
   `,
-  styles: ``
+  styles: ``,
+  standalone: true
 })
 export class ResumeComponent {
 
