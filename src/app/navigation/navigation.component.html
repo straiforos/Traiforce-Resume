@@ -1,23 +1,30 @@
-<nav>
-  <!-- Desktop Menu -->
-  <div class="desktop-menu">
-    @for (route of navigationRoutes; track route.path) {
-      <a mat-button [routerLink]="[route.path]">
-        {{ route.title }}
-      </a>
-    }
-  </div>
+<mat-toolbar>
+  <nav>
+    <!-- Desktop Menu -->
+    <div class="desktop-menu">
+      @for (route of navigationRoutes; track route.path) {
+        <a mat-button
+           [routerLink]="[route.path]"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: true}">
+          {{ route.title }}
+        </a>
+      }
+    </div>
 
-  <!-- Mobile Menu -->
-  <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu">
-    <mat-icon>menu</mat-icon>
-  </button>
+    <!-- Mobile Menu -->
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu">
+      <mat-icon>menu</mat-icon>
+    </button>
 
-  <mat-menu #menu="matMenu">
-    @for (route of navigationRoutes; track route.path) {
-      <a mat-menu-item [routerLink]="[route.path]">
-        {{ route.title }}
-      </a>
-    }
-  </mat-menu>
-</nav>
+    <mat-menu #menu="matMenu">
+      @for (route of navigationRoutes; track route.path) {
+        <a mat-menu-item
+           [routerLink]="[route.path]"
+           routerLinkActive="active">
+          {{ route.title }}
+        </a>
+      }
+    </mat-menu>
+  </nav>
+</mat-toolbar>
