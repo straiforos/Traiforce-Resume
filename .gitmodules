@@ -1,0 +1,3 @@
+[submodule "projects/resume/assets/resume"]
+	path = projects/resume/assets/resume
+	url = https://github.com/straiforos/resume.git
