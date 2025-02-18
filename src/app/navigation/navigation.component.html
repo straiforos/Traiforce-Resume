@@ -1,6 +1,7 @@
+<!-- Material Toolbar Container -->
 <mat-toolbar>
   <nav>
-    <!-- Desktop Menu -->
+    <!-- Desktop Navigation Menu -->
     <div class="desktop-menu">
       @for (route of navigationRoutes; track route.path) {
         <a mat-button
@@ -12,11 +13,12 @@
       }
     </div>
 
-    <!-- Mobile Menu -->
+    <!-- Mobile Navigation Menu (Hamburger) -->
     <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu">
       <mat-icon>menu</mat-icon>
     </button>
 
+    <!-- Mobile Menu Dropdown -->
     <mat-menu #menu="matMenu">
       @for (route of navigationRoutes; track route.path) {
         <a mat-menu-item
