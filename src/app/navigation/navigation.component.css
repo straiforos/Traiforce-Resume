@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  padding: 1rem;
+}
+
+.desktop-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+/* Optional: Style the active route */
+a.mat-button.active {
+  background-color: rgba(0, 0, 0, 0.04);
+}

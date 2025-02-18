@@ -1,11 +1,23 @@
-<p>navigation works!</p>
-
 <nav>
-  <ul>
+  <!-- Desktop Menu -->
+  <div class="desktop-menu">
     @for (route of navigationRoutes; track route.path) {
-      <li>
-        <a [routerLink]="[route.path]">{{ route.title }}</a>
-      </li>
+      <a mat-button [routerLink]="[route.path]">
+        {{ route.title }}
+      </a>
     }
-  </ul>
+  </div>
+
+  <!-- Mobile Menu -->
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    @for (route of navigationRoutes; track route.path) {
+      <a mat-menu-item [routerLink]="[route.path]">
+        {{ route.title }}
+      </a>
+    }
+  </mat-menu>
 </nav>
