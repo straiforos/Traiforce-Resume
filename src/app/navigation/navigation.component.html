@@ -1,0 +1,11 @@
+<p>navigation works!</p>
+
+<nav>
+  <ul>
+    @for (route of navigationRoutes; track route.path) {
+      <li>
+        <a [routerLink]="[route.path]">{{ route.title }}</a>
+      </li>
+    }
+  </ul>
+</nav>
