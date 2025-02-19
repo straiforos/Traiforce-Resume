@@ -3,6 +3,14 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Attach to Arc Debugging instance",
+      "port": 9222,
+      "urlFilter": "http://localhost:4200/*",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",
