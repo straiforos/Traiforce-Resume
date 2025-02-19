@@ -1,16 +1,17 @@
-# Traiforce Resume Project
+# JSON Resume Service NG Library
 
-A personal website for myself based on my resume.json. Allowing me to showcase my Angular skills, and have a data driven application that I can maintain the data in one location and use this application as the UI/UX that is better than the static JSON resume registry themes.
+JSON Resume Angular service library. Currently hardcoded via submodule with my JSON resume.
 
 ## How to run
-
-`npm run start`
+> Globally install Angular CLI
+`ng build resume`
+> Locally installed Angular CLI (my preference to run many versions)
+`npx ng build resume`    
 
 # Future ambition
-- Publish this site to https://stephen.traiforos.com
 - Publish the resume service as an NPM package allowing anyone to use their JSON resume to build an Angular application.
     - Unit test the service for maintainability.
-- Publish material components for each section of the JSON resume standard.
+- Mirgate material components for each section of the JSON resume standard into the library.
     - Unit test the components for maintainability.
 
 
