@@ -1,6 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+@use 'sass:map';
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -10,6 +11,9 @@
 $primary: mat.m2-define-palette(mat.$m2-cyan-palette);
 $accent: mat.m2-define-palette(mat.$m2-orange-palette);
 $warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+// Create a surface palette based on grey
+$surface-palette: mat.m2-define-palette(mat.$m2-grey-palette);
 
 // Create the theme
 $theme: mat.m2-define-dark-theme((
@@ -32,4 +36,8 @@ $theme: mat.m2-define-dark-theme((
   --accent-lighter-color: #{mat.m2-get-color-from-palette($accent, lighter)};
   --accent-darker-color: #{mat.m2-get-color-from-palette($accent, darker)};
   --warn-color: #{mat.m2-get-color-from-palette($warn)};
+
+  // Surface colors using Material's grey palette
+  --surface-default: #{mat.m2-get-color-from-palette($surface-palette, 900)};  // Darker
+  --surface-lighter: #{mat.m2-get-color-from-palette($surface-palette, 800)};  // Lighter
 }
