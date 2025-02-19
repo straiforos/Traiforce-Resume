@@ -10,5 +10,38 @@
         background-color: var(--accent-color);
       }
     }
+
+    mat-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .desktop-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    // Style for active route
+    .active {
+      background-color: rgba(0, 0, 0, 0.04);
+      color: primary;
+
+      &[mat-button] {
+        // Additional styling for desktop buttons
+        font-weight: 500;
+      }
+
+      &[mat-menu-item] {
+        // Additional styling for mobile menu items
+        font-weight: 500;
+      }
+    }
+
+    img {
+      height: 40px; // Adjust this value to match your desired logo height
+      width: auto;
+    }
+
   }
 }

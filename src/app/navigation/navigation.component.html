@@ -1,32 +1,38 @@
-<!-- Material Toolbar Container -->
-<mat-toolbar>
-  <nav>
-    <!-- Desktop Navigation Menu -->
-    <div class="desktop-menu">
-      @for (route of navigationRoutes; track route.path) {
-        <a mat-button
-           [routerLink]="[route.path]"
+<div class="navigation-container">
+  <mat-toolbar>
+    <a routerLink="/">
+      <img src="Traiforce Group LLC Logo Version 1 png (1).png" alt="Traiforce Group LLC Logo">
+    </a>
+
+    <!-- Template for navigation items -->
+    <ng-template #navItems let-displayType="displayType">
+      <ng-container *ngFor="let route of navigationRoutes">
+        <a [attr.mat-menu-item]="displayType === 'mobile' || null"
+           [attr.mat-button]="displayType === 'desktop' || null"
+           [routerLink]="route.path"
            routerLinkActive="active"
-           [routerLinkActiveOptions]="{exact: true}">
-          {{ route.title }}
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="nav-item">
+          {{route.title}}
         </a>
-      }
-    </div>
+      </ng-container>
+    </ng-template>
 
-    <!-- Mobile Navigation Menu (Hamburger) -->
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu">
-      <mat-icon>menu</mat-icon>
-    </button>
+    <!-- Mobile menu -->
+    <ng-container *ngIf="isHandset$ | async">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <ng-template [ngTemplateOutlet]="navItems" [ngTemplateOutletContext]="{ displayType: 'mobile' }"></ng-template>
+      </mat-menu>
+    </ng-container>
 
-    <!-- Mobile Menu Dropdown -->
-    <mat-menu #menu="matMenu">
-      @for (route of navigationRoutes; track route.path) {
-        <a mat-menu-item
-           [routerLink]="[route.path]"
-           routerLinkActive="active">
-          {{ route.title }}
-        </a>
-      }
-    </mat-menu>
-  </nav>
-</mat-toolbar>
+    <!-- Desktop menu -->
+    <ng-container *ngIf="!(isHandset$ | async)">
+      <div class="desktop-links">
+        <ng-template [ngTemplateOutlet]="navItems" [ngTemplateOutletContext]="{ displayType: 'desktop' }"></ng-template>
+      </div>
+    </ng-container>
+  </mat-toolbar>
+</div>
