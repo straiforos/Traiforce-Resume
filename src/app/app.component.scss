@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  router-outlet {
+    flex: 1;
+    margin-top: 4rem; // To account for fixed header
+  }
+
+  app-footer {
+    margin-top: auto;
+  }
+}
