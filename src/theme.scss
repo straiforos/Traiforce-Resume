@@ -6,31 +6,30 @@
 // have to load a single css file for Angular Material in your app.
 @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// For M2 theme, we need to use the m2- prefixed functions and palettes
-$Triforce-Resume-primary: mat.m2-define-palette(mat.$m2-cyan-palette);
-$Triforce-Resume-accent: mat.m2-define-palette(mat.$m2-orange-palette);
-$Triforce-Resume-warn: mat.m2-define-palette(mat.$m2-red-palette);
+// Define the palettes
+$primary: mat.m2-define-palette(mat.$m2-cyan-palette);
+$accent: mat.m2-define-palette(mat.$m2-orange-palette);
+$warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-// Create the theme object using the M2 theme definition
-$Triforce-Resume-theme: mat.m2-define-dark-theme((
+// Create the theme
+$theme: mat.m2-define-light-theme((
   color: (
-    primary: $Triforce-Resume-primary,
-    accent: $Triforce-Resume-accent,
-    warn: $Triforce-Resume-warn,
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
   )
 ));
 
-// Include theme styles for core and each component used in your app.
-@include mat.all-component-themes($Triforce-Resume-theme);
+// Apply the theme
+@include mat.all-component-themes($theme);
 
 // Define CSS custom properties for use in components
 :root {
-  --primary-color: #{mat.m2-get-color-from-palette($Triforce-Resume-primary)};
-  --primary-lighter-color: #{mat.m2-get-color-from-palette($Triforce-Resume-primary, lighter)};
-  --primary-darker-color: #{mat.m2-get-color-from-palette($Triforce-Resume-primary, darker)};
-  --accent-color: #{mat.m2-get-color-from-palette($Triforce-Resume-accent)};
-  --accent-lighter-color: #{mat.m2-get-color-from-palette($Triforce-Resume-accent, lighter)};
-  --accent-darker-color: #{mat.m2-get-color-from-palette($Triforce-Resume-accent, darker)};
-  --warn-color: #{mat.m2-get-color-from-palette($Triforce-Resume-warn)};
+  --primary-color: #{mat.m2-get-color-from-palette($primary)};
+  --primary-lighter-color: #{mat.m2-get-color-from-palette($primary, lighter)};
+  --primary-darker-color: #{mat.m2-get-color-from-palette($primary, darker)};
+  --accent-color: #{mat.m2-get-color-from-palette($accent)};
+  --accent-lighter-color: #{mat.m2-get-color-from-palette($accent, lighter)};
+  --accent-darker-color: #{mat.m2-get-color-from-palette($accent, darker)};
+  --warn-color: #{mat.m2-get-color-from-palette($warn)};
 }
