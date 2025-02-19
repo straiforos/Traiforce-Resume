@@ -7,12 +7,11 @@
     <!-- Template for navigation items -->
     <ng-template #navItems let-displayType="displayType">
       <ng-container *ngFor="let route of navigationRoutes">
-        <a [attr.mat-menu-item]="displayType === 'mobile' || null"
-           [attr.mat-button]="displayType === 'desktop' || null"
+        <a [class.nav-item]="displayType === 'desktop'"
+           [attr.mat-menu-item]="displayType === 'mobile' || null"
            [routerLink]="route.path"
            routerLinkActive="active"
-           [routerLinkActiveOptions]="{ exact: true }"
-           class="nav-item">
+           [routerLinkActiveOptions]="{ exact: true }">
           {{route.title}}
         </a>
       </ng-container>
