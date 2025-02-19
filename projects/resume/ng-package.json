@@ -3,5 +3,8 @@
   "dest": "../../dist/resume",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    "./assets/resume/resume.json"
+  ]
 }

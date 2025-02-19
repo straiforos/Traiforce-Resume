@@ -1,1 +1,41 @@
-<p>about-me works!</p>
+<div class="about-me-container" *ngIf="(basics$ | async) as basics">
+  <section class="hero">
+    <img [src]="basics.image" [alt]="basics.name" class="profile-image">
+    <h1>{{ basics.name }}</h1>
+    <h2>{{ basics.label }}</h2>
+    <div class="location">
+      {{ basics.location.city }}, {{ basics.location.region }}
+    </div>
+  </section>
+
+  <section class="summary">
+    <h2>About Me</h2>
+    <p>{{ basics.summary }}</p>
+  </section>
+
+  <section class="connect">
+    <h2>Let's Connect</h2>
+    <div class="profiles">
+      <a *ngFor="let profile of basics.profiles"
+         [href]="profile.url"
+         target="_blank"
+         class="profile-link">
+        {{ profile.network }}
+      </a>
+    </div>
+  </section>
+
+  <section class="interests" *ngIf="(interests$ | async) as interests">
+    <h2>Personal Interests</h2>
+    <div class="interests-grid">
+      <div *ngFor="let interest of interests" class="interest-card">
+        <h3>{{ interest.name }}</h3>
+        <div class="keywords">
+          <span *ngFor="let keyword of interest.keywords" class="keyword">
+            {{ keyword }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

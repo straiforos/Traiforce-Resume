@@ -1,42 +1,50 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Resume, Basics, WorkExperience, Education, Skill, Interest, Project } from './types/resume.types';
-import resumeData from '../../assets/resume/resume.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResumeService {
-  private resumeSubject = new BehaviorSubject<Resume>(resumeData);
-  public resume$ = this.resumeSubject.asObservable();
+  private resumeSubject = new BehaviorSubject<Resume | null>(null);
+  public resume$: Observable<Resume>;
 
   // Expose individual sections as observables
-  public basics$: Observable<Basics> = this.resume$.pipe(
-    map(resume => resume.basics)
-  );
+  public basics$: Observable<Basics>;
+  public work$: Observable<WorkExperience[]>;
+  public education$: Observable<Education[]>;
+  public skills$: Observable<Skill[]>;
+  public interests$: Observable<Interest[]>;
+  public projects$: Observable<Project[]>;
 
-  public work$: Observable<WorkExperience[]> = this.resume$.pipe(
-    map(resume => resume.work)
-  );
+  constructor(private http: HttpClient) {
+    this.resume$ = this.resumeSubject.asObservable().pipe(
+      map(resume => {
+        if (!resume) {
+          throw new Error('Resume data not loaded');
+        }
+        return resume;
+      })
+    );
 
-  public education$: Observable<Education[]> = this.resume$.pipe(
-    map(resume => resume.education)
-  );
+    this.basics$ = this.resume$.pipe(map(resume => resume.basics));
+    this.work$ = this.resume$.pipe(map(resume => resume.work));
+    this.education$ = this.resume$.pipe(map(resume => resume.education));
+    this.skills$ = this.resume$.pipe(map(resume => resume.skills));
+    this.interests$ = this.resume$.pipe(map(resume => resume.interests));
+    this.projects$ = this.resume$.pipe(map(resume => resume.projects));
 
-  public skills$: Observable<Skill[]> = this.resume$.pipe(
-    map(resume => resume.skills)
-  );
+    // Load the resume data
+    this.loadResumeData();
+  }
 
-  public interests$: Observable<Interest[]> = this.resume$.pipe(
-    map(resume => resume.interests)
-  );
-
-  public projects$: Observable<Project[]> = this.resume$.pipe(
-    map(resume => resume.projects)
-  );
-
-  constructor() {}
+  private loadResumeData(): void {
+    this.http.get<Resume>('assets/resume/resume.json').pipe(
+      tap(resume => this.resumeSubject.next(resume))
+    ).subscribe();
+  }
 
   // Helper methods to get specific items
   public getWorkExperienceByCompany(company: string): Observable<WorkExperience | undefined> {
