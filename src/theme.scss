@@ -20,15 +20,21 @@ $theme: mat.m2-define-dark-theme((
   color: (
     primary: $primary,
     accent: $accent,
-    warn: $warn,
+    warn: $warn
   )
 ));
+
+// Get the color config from the theme
+$color-config: mat.m2-get-color-config($theme);
+$foreground: map.get($color-config, 'foreground');
+$background: map.get($color-config, 'background');
 
 // Apply the theme
 @include mat.all-component-themes($theme);
 
 // Define CSS custom properties for use in components
 :root {
+  // Theme colors
   --primary-color: #{mat.m2-get-color-from-palette($primary)};
   --primary-lighter-color: #{mat.m2-get-color-from-palette($primary, lighter)};
   --primary-darker-color: #{mat.m2-get-color-from-palette($primary, darker)};
@@ -37,7 +43,62 @@ $theme: mat.m2-define-dark-theme((
   --accent-darker-color: #{mat.m2-get-color-from-palette($accent, darker)};
   --warn-color: #{mat.m2-get-color-from-palette($warn)};
 
-  // Surface colors using Material's grey palette
-  --surface-default: #{mat.m2-get-color-from-palette($surface-palette, 900)};  // Darker
-  --surface-lighter: #{mat.m2-get-color-from-palette($surface-palette, 800)};  // Lighter
+  // Surface colors
+  --surface-default: #{mat.m2-get-color-from-palette($surface-palette, 900)};
+  --surface-lighter: #{mat.m2-get-color-from-palette($surface-palette, 800)};
+
+  // Text colors for dark theme
+  --text-primary: rgba(255, 255, 255, 0.87);
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --text-hint: rgba(255, 255, 255, 0.38);
+  --text-disabled: rgba(255, 255, 255, 0.38);
+
+  // Other foreground colors
+  --divider-color: rgba(255, 255, 255, 0.12);
+  --icon-color: rgba(255, 255, 255, 0.6);
+}
+
+// Global text styles
+body {
+  color: var(--text-primary);
+  background-color: var(--surface-default);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+p {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--primary-lighter-color);
+  }
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-hint {
+  color: var(--text-hint);
+}
+
+.text-disabled {
+  color: var(--text-disabled);
+}
+
+.divider {
+  background-color: var(--divider-color);
+}
+
+.icon {
+  color: var(--icon-color);
 }
