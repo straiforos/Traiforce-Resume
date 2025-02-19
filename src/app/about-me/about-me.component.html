@@ -19,8 +19,10 @@
       <a *ngFor="let profile of basics.profiles"
          [href]="profile.url"
          target="_blank"
-         class="social-link">
-        {{ profile.network }}
+         class="social-link"
+         [title]="profile.network">
+        <fa-icon [icon]="getIconForNetwork(profile.network)" class="social-icon"></fa-icon>
+        <span class="network-name">{{ profile.network }}</span>
       </a>
     </div>
   </section>
