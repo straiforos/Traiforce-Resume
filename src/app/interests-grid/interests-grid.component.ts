@@ -10,5 +10,5 @@ import { Interest } from 'resume';
   styleUrls: ['./interests-grid.component.scss']
 })
 export class InterestsGridComponent {
-  @Input() interests: Interest[] = [];
+  @Input({ required: true }) interests!: Interest[];
 }

@@ -3,6 +3,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ResumeComponent } from './resume/resume.component';
+import { InterestsGridComponent } from './interests-grid/interests-grid.component';
+import { interestsResolver } from './interests-grid/interests.resolver';
 
 export const routes: Routes = [
   {
@@ -28,7 +30,10 @@ export const routes: Routes = [
   {
     path: 'hobbies',
     title: 'Hobbies',
-    component: PortfolioComponent
+    component: InterestsGridComponent,
+    resolve: {
+      interests: interestsResolver
+    }
   },
   {
     path: '**',
