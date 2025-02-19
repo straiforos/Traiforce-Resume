@@ -1,18 +1,16 @@
 @use '@angular/material' as mat;
-@import 'variables';
-
-$primary-color: #333;
+@use '../../styles/variables' as vars;
 
 .navigation {
   &-container {
-    background-color: $primary-color;
+    background-color: var(--primary-color);
 
     // Nested selectors
     .nav-item {
       color: white;
 
       &:hover {
-        background-color: $accent-color;
+        background-color: var(--accent-color);
       }
     }
   }

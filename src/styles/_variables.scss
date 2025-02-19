@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use 'sass:map';
 
 // Get the color palettes from the cyan-orange theme
 $primary: mat.define-palette(mat.$cyan-palette);

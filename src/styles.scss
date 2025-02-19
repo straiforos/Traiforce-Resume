@@ -1,12 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
-@import 'variables';
+@use 'variables' as vars;
 
 // Include the common styles for Angular Material
 @include mat.core();
 
-// Use the cyan-orange prebuilt theme
-@import '@angular/material/prebuilt-themes/cyan-orange.css';
+// Define the theme
+$my-primary: mat.define-palette(mat.$cyan-palette);
+$my-accent: mat.define-palette(mat.$orange-palette);
+
+// Create the theme object
+$my-theme: mat.define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent
+  )
+));
+
+// Apply the theme
+@include mat.all-component-themes($my-theme);
+
+// Generate CSS custom properties from the theme
+:root {
+  --primary-color: #{mat.get-color-from-palette($my-primary)};
+  --primary-lighter-color: #{mat.get-color-from-palette($my-primary, lighter)};
+  --primary-darker-color: #{mat.get-color-from-palette($my-primary, darker)};
+  --accent-color: #{mat.get-color-from-palette($my-accent)};
+  --accent-lighter-color: #{mat.get-color-from-palette($my-accent, lighter)};
+  --accent-darker-color: #{mat.get-color-from-palette($my-accent, darker)};
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
