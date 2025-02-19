@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable, filter, map, tap, catchError, throwError } from 'rxjs';
 import { Resume, Basics, WorkExperience, Education, Skill, Interest, Project } from './types/resume.types';
 
 @Injectable({
-  providedIn: 'root',
-  deps: [provideHttpClient()]
+  providedIn: 'root'
 })
 export class ResumeService {
   private readonly resumeSubject = new BehaviorSubject<Resume | null>(null);
@@ -21,13 +19,9 @@ export class ResumeService {
   public projects$: Observable<Project[]>;
 
   constructor(private readonly http: HttpClient) {
+    // Filter out null values and then map to Resume
     this.resume$ = this.resumeSubject.asObservable().pipe(
-      map(resume => {
-        if (!resume) {
-          throw new Error('Resume data not loaded');
-        }
-        return resume;
-      })
+      filter((resume): resume is Resume => resume !== null)
     );
 
     this.basics$ = this.resume$.pipe(map(resume => resume.basics));
@@ -43,7 +37,11 @@ export class ResumeService {
 
   private loadResumeData(): void {
     this.http.get<Resume>('assets/resume/resume.json').pipe(
-      tap(resume => this.resumeSubject.next(resume))
+      tap(resume => this.resumeSubject.next(resume)),
+      catchError(error => {
+        console.error('Failed to load resume data:', error);
+        return throwError(() => new Error(`Failed to load resume data: ${error.message}`));
+      })
     ).subscribe();
   }
 

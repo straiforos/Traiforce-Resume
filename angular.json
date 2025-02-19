@@ -24,6 +24,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "resume.json",
+                "input": "projects/resume/assets/resume",
+                "output": "assets/resume"
               }
             ],
             "styles": [
@@ -89,6 +94,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "resume.json",
+                "input": "projects/resume/assets/resume",
+                "output": "assets/resume"
               }
             ],
             "styles": [
