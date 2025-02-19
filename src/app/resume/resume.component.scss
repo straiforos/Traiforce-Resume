@@ -4,40 +4,99 @@
   padding: 2rem;
 }
 
-.resume-header {
+.section-title {
   text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
   margin-bottom: 2rem;
+}
 
-  .profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    box-shadow: var(--mat-elevation-level2);
-  }
+section {
+  margin-bottom: 3rem;
+  background: var(--surface-lighter);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--mat-elevation-level1);
 
-  h1 {
-    color: var(--text-primary);
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  h2 {
-    color: var(--text-secondary);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    color: var(--text-primary);
-    line-height: 1.6;
-    margin-bottom: 1rem;
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
 .contact-info {
   margin: 1rem 0;
   color: var(--text-secondary);
+  text-align: center;
+}
+
+.work-section {
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    app-experience {
+      border-bottom: 1px solid var(--surface-lightest);
+      padding-bottom: 1.5rem;
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.education-section {
+  .education-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--surface-lightest);
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    h3 {
+      color: var(--primary-color);
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      margin: 0.5rem 0;
+      padding-left: 1.5rem;
+
+      li {
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
 }
 
 .profiles {
@@ -57,21 +116,7 @@
   }
 }
 
-section {
-  margin-bottom: 2rem;
-  background: var(--surface-lighter);
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: var(--mat-elevation-level1);
-
-  h2 {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-.job, .education-item, .project {
+.job, .project {
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--surface-lightest);
@@ -169,6 +214,12 @@ section {
 
   section {
     padding: 1rem;
+  }
+
+  .work-section {
+    .experience-list {
+      flex-direction: column;
+    }
   }
 
   .profiles {

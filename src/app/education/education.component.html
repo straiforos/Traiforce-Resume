@@ -1,0 +1,13 @@
+<div class="education-card">
+  <h3>{{ education.institution }}</h3>
+  <p class="degree">{{ education.studyType }} in {{ education.area }}</p>
+  <p class="score">GPA: {{ education.score }}</p>
+  <div *ngIf="education.courses.length" class="courses">
+    <h4>Key Courses:</h4>
+    <div class="course-tags">
+      <span *ngFor="let course of education.courses" class="course-tag">
+        {{ course }}
+      </span>
+    </div>
+  </div>
+</div>

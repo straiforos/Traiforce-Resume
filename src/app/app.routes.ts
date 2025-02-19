@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { ResumeComponent } from 'resume';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ResumeComponent } from './resume/resume.component';
 
 export const routes: Routes = [
   {

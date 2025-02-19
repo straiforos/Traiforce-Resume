@@ -1,0 +1,11 @@
+<div class="skills-grid">
+  <div *ngFor="let skill of skills" class="skill-card">
+    <h3>{{ skill.name }}</h3>
+    <div class="level">{{ skill.level }}</div>
+    <div class="keywords">
+      <span *ngFor="let keyword of skill.keywords" class="keyword">
+        {{ keyword }}
+      </span>
+    </div>
+  </div>
+</div>

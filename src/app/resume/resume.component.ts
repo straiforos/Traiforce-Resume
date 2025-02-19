@@ -1,11 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ResumeService } from 'resume';
+import { ProfileComponent } from '../profile/profile.component';
+import { SocialNetworksComponent } from '../social-networks/social-networks.component';
+import { ExperienceComponent } from '../experience/experience.component';
+import { InterestsGridComponent } from '../interests-grid/interests-grid.component';
+import { PortfolioComponent } from '../portfolio/portfolio.component';
+import { SkillsComponent } from '../skills/skills.component';
+import { EducationComponent } from '../education/education.component';
 
 @Component({
-  selector: 'lib-resume',
+  selector: 'app-resume',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    ProfileComponent,
+    SocialNetworksComponent,
+    ExperienceComponent,
+    InterestsGridComponent,
+    PortfolioComponent,
+    SkillsComponent,
+    EducationComponent
+  ],
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss']
 })
