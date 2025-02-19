@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { Resume, Basics, WorkExperience, Education, Skill, Interest, Project } from './types/resume.types';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
+  deps: [provideHttpClient()]
 })
 export class ResumeService {
-  private resumeSubject = new BehaviorSubject<Resume | null>(null);
+  private readonly resumeSubject = new BehaviorSubject<Resume | null>(null);
   public resume$: Observable<Resume>;
 
   // Expose individual sections as observables
@@ -19,7 +20,7 @@ export class ResumeService {
   public interests$: Observable<Interest[]>;
   public projects$: Observable<Project[]>;
 
-  constructor(private http: HttpClient) {
+  constructor(private readonly http: HttpClient) {
     this.resume$ = this.resumeSubject.asObservable().pipe(
       map(resume => {
         if (!resume) {
