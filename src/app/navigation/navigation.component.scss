@@ -4,15 +4,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0 16px;
     }
 
     .desktop-links {
       display: flex;
       height: 100%;
       gap: 8px;
+      align-items: center;
 
       [mat-button] {
         transition: all 0.3s ease;
+        line-height: 40px;
 
         &:hover:not(.mat-accent) {
           border-radius: 20px;
@@ -21,6 +24,7 @@
 
         &.mat-accent {
           border-radius: 20px;
+          color: var(--accent-color);
         }
       }
     }
@@ -28,6 +32,7 @@
     img {
       height: 40px;
       width: auto;
+      vertical-align: middle;
     }
   }
 }
