@@ -15,16 +15,7 @@
 
   <section class="social-links">
     <h2>Let's Connect</h2>
-    <div class="social-networks">
-      <a *ngFor="let profile of basics.profiles"
-         [href]="profile.url"
-         target="_blank"
-         class="social-link"
-         [title]="profile.network">
-        <fa-icon [icon]="getIconForNetwork(profile.network)" class="social-icon"></fa-icon>
-        <span class="network-name">{{ profile.network }}</span>
-      </a>
-    </div>
+    <app-social-networks [profiles]="basics.profiles"></app-social-networks>
   </section>
 
   <section class="interests" *ngIf="(interests$ | async) as interests">
