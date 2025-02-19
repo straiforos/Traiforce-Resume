@@ -4,7 +4,7 @@
   padding: 2rem;
 }
 
-.hero {
+.profile-header {
   text-align: center;
   margin-bottom: 3rem;
 
@@ -37,7 +37,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.summary {
+.bio-summary {
   p {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -45,13 +45,13 @@ h2 {
   }
 }
 
-.profiles {
+.social-networks {
   display: flex;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
 
-  .profile-link {
+  .social-link {
     padding: 0.5rem 1rem;
     background-color: #f0f0f0;
     border-radius: 20px;

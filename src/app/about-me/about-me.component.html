@@ -1,5 +1,5 @@
 <div class="about-me-container" *ngIf="(basics$ | async) as basics">
-  <section class="hero">
+  <section class="profile-header">
     <img [src]="basics.image" [alt]="basics.name" class="profile-image">
     <h1>{{ basics.name }}</h1>
     <h2>{{ basics.label }}</h2>
@@ -8,18 +8,18 @@
     </div>
   </section>
 
-  <section class="summary">
+  <section class="bio-summary">
     <h2>About Me</h2>
     <p>{{ basics.summary }}</p>
   </section>
 
-  <section class="connect">
+  <section class="social-links">
     <h2>Let's Connect</h2>
-    <div class="profiles">
+    <div class="social-networks">
       <a *ngFor="let profile of basics.profiles"
          [href]="profile.url"
          target="_blank"
-         class="profile-link">
+         class="social-link">
         {{ profile.network }}
       </a>
     </div>
