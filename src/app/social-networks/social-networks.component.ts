@@ -23,14 +23,14 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
   standalone: true,
   imports: [CommonModule, FontAwesomeModule],
   template: `
-    <div class="social-networks">
+    <div class="social-networks" [class.icons-only]="iconsOnly">
       <a *ngFor="let profile of profiles"
          [href]="profile.url"
          target="_blank"
          class="social-link"
          [title]="profile.network">
         <fa-icon [icon]="getIconForNetwork(profile.network)" class="social-icon"></fa-icon>
-        <span class="network-name">{{ profile.network }}</span>
+        <span class="network-name" *ngIf="!iconsOnly">{{ profile.network }}</span>
       </a>
     </div>
   `,
@@ -40,6 +40,22 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
       gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
+
+      &.icons-only {
+        .social-link {
+          padding: 0.5rem;
+          background-color: transparent;
+
+          &:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+          }
+
+          .social-icon {
+            font-size: 1.4rem;
+          }
+        }
+      }
     }
 
     .social-link {
@@ -72,6 +88,7 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 })
 export class SocialNetworksComponent {
   @Input() profiles: Profile[] = [];
+  @Input() iconsOnly: boolean = false;
 
   // Icon mapping for social networks
   private networkIcons: { [key: string]: any } = {
