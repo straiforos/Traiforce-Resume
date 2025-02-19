@@ -7,27 +7,27 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 export const routes: Routes = [
   {
     path: 'about-me',
-    title: 'About Stephen Traiforos',
+    title: 'About Me',
     component: AboutMeComponent,
   },
   {
     path: 'timeline',
-    title: 'Stephens\'s Timeline',
+    title: 'Timeline',
     component: TimelineComponent
   },
   {
     path: 'resume',
-    title: 'Stephen\'s Resume',
+    title: 'Resume',
     component: ResumeComponent
   },
   {
     path: 'portfolio',
-    title: 'Stephen\'s Portfolio',
+    title: 'Portfolio',
     component: PortfolioComponent
   },
   {
-    path: 'passions',
-    title: 'Stephen\'s Passions',
+    path: 'hobbies',
+    title: 'Hobbies',
     component: PortfolioComponent
   },
   {
