@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { SocialNetworksComponent } from '../social-networks/social-networks.component';
 import { InterestsGridComponent } from '../interests-grid/interests-grid.component';
 import { BioSummaryComponent } from '../bio-summary/bio-summary.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-about-me',
@@ -14,7 +15,8 @@ import { BioSummaryComponent } from '../bio-summary/bio-summary.component';
     CommonModule,
     SocialNetworksComponent,
     InterestsGridComponent,
-    BioSummaryComponent
+    BioSummaryComponent,
+    ProfileComponent
   ],
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss']

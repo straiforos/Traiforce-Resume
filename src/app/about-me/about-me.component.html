@@ -1,12 +1,5 @@
 <div class="about-me-container" *ngIf="(basics$ | async) as basics">
-  <section class="profile-header">
-    <img [src]="basics.image" [alt]="basics.name" class="profile-image">
-    <h1>{{ basics.name }}</h1>
-    <h2>{{ basics.label }}</h2>
-    <div class="location">
-      {{ basics.location.city }}, {{ basics.location.region }}
-    </div>
-  </section>
+  <app-profile [basics]="basics"></app-profile>
 
   <section class="bio-summary">
     <app-bio-summary [summary]="basics.summary"></app-bio-summary>
