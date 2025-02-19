@@ -1,0 +1,12 @@
+<div class="timeline-content">
+  <div class="timeline-date">
+    {{ experience.startDate | date:'MMM yyyy' }} - {{ experience.endDate ? (experience.endDate | date:'MMM yyyy') : 'Present' }}
+  </div>
+  <h3>{{ experience.position }}</h3>
+  <h4>
+    <a [href]="experience.url" target="_blank">{{ experience.company }}</a>
+  </h4>
+  <ul class="highlights">
+    <li *ngFor="let highlight of experience.highlights">{{ highlight }}</li>
+  </ul>
+</div>

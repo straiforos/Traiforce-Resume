@@ -4,18 +4,7 @@
   <div class="timeline" *ngIf="(work$ | async) as work">
     <div *ngFor="let job of work; let isFirst = first" class="timeline-item">
       <div class="timeline-dot" [class.active]="isFirst"></div>
-      <div class="timeline-content">
-        <div class="timeline-date">
-          {{ job.startDate | date:'MMM yyyy' }} - {{ job.endDate ? (job.endDate | date:'MMM yyyy') : 'Present' }}
-        </div>
-        <h3>{{ job.position }}</h3>
-        <h4>
-          <a [href]="job.url" target="_blank">{{ job.company }}</a>
-        </h4>
-        <ul class="highlights">
-          <li *ngFor="let highlight of job.highlights">{{ highlight }}</li>
-        </ul>
-      </div>
+      <app-experience [experience]="job"></app-experience>
     </div>
   </div>
 </div>
