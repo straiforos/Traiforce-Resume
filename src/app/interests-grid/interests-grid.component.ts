@@ -29,7 +29,14 @@ import { Interest } from 'resume';
       background: var(--surface-lighter);
       padding: 1.5rem;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: var(--surface-lightest);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
 
       h3 {
         margin-bottom: 1rem;

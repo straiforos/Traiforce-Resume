@@ -43,9 +43,10 @@ $background: map.get($color-config, 'background');
   --accent-darker-color: #{mat.m2-get-color-from-palette($accent, darker)};
   --warn-color: #{mat.m2-get-color-from-palette($warn)};
 
-  // Surface colors
-  --surface-default: #{mat.m2-get-color-from-palette($surface-palette, 900)};
-  --surface-lighter: #{mat.m2-get-color-from-palette($surface-palette, 800)};
+  // Surface colors - adjusted for better contrast
+  --surface-default: #{mat.m2-get-color-from-palette($surface-palette, 900)}; // Background
+  --surface-lighter: #{mat.m2-get-color-from-palette($surface-palette, 800)}; // Cards
+  --surface-lightest: #{mat.m2-get-color-from-palette($surface-palette, 600)}; // Card hover/active states
 
   // Text colors for dark theme
   --text-primary: rgba(255, 255, 255, 0.87);
