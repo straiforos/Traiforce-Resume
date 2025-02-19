@@ -6,18 +6,14 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="bio-summary">
-      <h2>About Me</h2>
-      <p>{{ summary }}</p>
-    </section>
+    <h2>About Me</h2>
+    <p>{{ summary }}</p>
   `,
   styles: [`
-    .bio-summary {
-      p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: var(--text-primary);
-      }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-primary);
     }
 
     h2 {
