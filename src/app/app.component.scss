@@ -11,9 +11,12 @@
     z-index: 1000;
   }
 
-  router-outlet {
+  .content-wrapper {
     flex: 1;
-    margin-top: 4rem; // To account for fixed header
+    padding-top: 4rem; // Space for fixed header
+    padding-bottom: 2rem; // Space before footer
+    display: flex;
+    flex-direction: column;
   }
 
   app-footer {
