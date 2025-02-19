@@ -2,64 +2,31 @@
   &-container {
     background-color: var(--primary-color);
 
-    // Nested selectors
-    .nav-item {
-      color: white;
-      height: 100%;
-      align-items: center;
-      display: flex;
-      padding: 0 16px;
-      border-radius: 0;
-      font-weight: 400;
-      position: relative;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 14px;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background-color: var(--accent-color);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-
-        &::after {
-          transform: scaleX(1);
-        }
-      }
-    }
-
     mat-toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 64px;
     }
 
     .desktop-links {
       display: flex;
-      gap: 0; // Remove gap since we're using padding
       height: 100%;
-    }
+      gap: 8px;
 
-    // Style for active route
-    .active {
-      font-weight: 500;
+      [mat-button] {
+        color: white;
+        transition: all 0.3s ease;
+        padding: 0 16px;
 
-      &::after {
-        transform: scaleX(1);
-      }
+        &:hover {
+          border-radius: 20px;
+          background-color: rgba(255, 255, 255, 0.1);
+        }
 
-      &[mat-button], &[mat-menu-item] {
-        background-color: rgba(255, 255, 255, 0.1);
+        &.mat-accent {
+          border-radius: 20px;
+          background-color: rgba(255, 255, 255, 0.2);
+        }
       }
     }
 

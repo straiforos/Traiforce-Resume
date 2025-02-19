@@ -7,10 +7,17 @@
     <!-- Template for navigation items -->
     <ng-template #navItems let-displayType="displayType">
       <ng-container *ngFor="let route of navigationRoutes">
-        <a [class.nav-item]="displayType === 'desktop'"
-           [attr.mat-menu-item]="displayType === 'mobile' || null"
+        <a mat-button
+           *ngIf="displayType === 'desktop'"
            [routerLink]="route.path"
-           routerLinkActive="active"
+           routerLinkActive="mat-accent"
+           [routerLinkActiveOptions]="{ exact: true }">
+          {{route.title}}
+        </a>
+        <a mat-menu-item
+           *ngIf="displayType === 'mobile'"
+           [routerLink]="route.path"
+           routerLinkActive="mat-accent"
            [routerLinkActiveOptions]="{ exact: true }">
           {{route.title}}
         </a>
