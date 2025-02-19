@@ -1,20 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { ResumeComponent } from './resume.component';
+import {provideHttpClient } from '@angular/common/http';
 import { ResumeService } from './resume.service';
 
 @NgModule({
   imports: [
-    CommonModule,
-    HttpClientModule,
-    ResumeComponent
-  ],
-  exports: [
-    ResumeComponent
+    CommonModule
   ],
   providers: [
-    ResumeService
+    ResumeService,
+    provideHttpClient()
   ]
 })
 export class ResumeModule { }
