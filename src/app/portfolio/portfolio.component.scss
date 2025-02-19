@@ -28,6 +28,8 @@ h1 {
   box-shadow: var(--mat-elevation-level1);
   transition: all 0.3s ease;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     transform: translateY(-0.125rem);
@@ -38,6 +40,9 @@ h1 {
 
 .project-content {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 
   h2 {
     color: var(--primary-color);
@@ -78,7 +83,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: auto;
 }
 
 .tech-tag {
@@ -97,6 +102,8 @@ h1 {
   border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  text-align: center;
 
   &:hover {
     background: var(--accent-lighter-color);
