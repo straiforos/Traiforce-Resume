@@ -27,6 +27,7 @@ export const routes: Routes = [
     title: 'Portfolio',
     component: PortfolioComponent
   },
+  // TODO style so the interests are centered in the page.
   {
     path: 'hobbies',
     title: 'Hobbies',
