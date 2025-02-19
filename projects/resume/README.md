@@ -8,7 +8,9 @@ A personal website for myself based on my resume.json. Allowing me to showcase m
 
 # Future ambition
 - Publish this site to https://stephen.traiforos.com
-Publish the resume service as an NPM package allowing anyone to use their JSON resume to build an Angular application.
-- Publish material components for each section of the JSON resume standard. 
+- Publish the resume service as an NPM package allowing anyone to use their JSON resume to build an Angular application.
+    - Unit test the service for maintainability.
+- Publish material components for each section of the JSON resume standard.
+    - Unit test the components for maintainability.
 
 
