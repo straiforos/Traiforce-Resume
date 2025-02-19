@@ -28,7 +28,8 @@
     "esModuleInterop": true,
     "paths": {
       "resume": [
-        "dist/resume"
+        "dist/resume",
+        "projects/resume/src/public-api.ts"
       ]
     }
   },
