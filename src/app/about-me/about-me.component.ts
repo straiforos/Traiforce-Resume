@@ -4,11 +4,12 @@ import { ResumeService } from 'resume';
 import { Basics, Interest } from 'resume';
 import { Observable } from 'rxjs';
 import { SocialNetworksComponent } from '../social-networks/social-networks.component';
+import { InterestsGridComponent } from '../interests-grid/interests-grid.component';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [CommonModule, SocialNetworksComponent],
+  imports: [CommonModule, SocialNetworksComponent, InterestsGridComponent],
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss']
 })
