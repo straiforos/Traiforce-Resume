@@ -44,12 +44,12 @@ h1 {
   border-radius: 50%;
   background: var(--accent-color);
   border: 0.125rem solid var(--surface-default);
-  box-shadow: 0 0 0 0.125rem var(--accent-color);
+  box-shadow: var(--mat-elevation-level1);
   transition: all 0.3s ease;
 
   &.active {
     background: var(--primary-color);
-    box-shadow: 0 0 0 0.125rem var(--primary-color);
+    box-shadow: var(--mat-elevation-level2);
   }
 }
 
@@ -57,12 +57,12 @@ h1 {
   background: var(--surface-lighter);
   padding: 1.5rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  box-shadow: var(--mat-elevation-level1);
   transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-0.125rem);
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: var(--mat-elevation-level3);
     background: var(--surface-lightest);
   }
 }
