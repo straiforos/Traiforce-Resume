@@ -5,11 +5,17 @@ import { Basics, Interest } from 'resume';
 import { Observable } from 'rxjs';
 import { SocialNetworksComponent } from '../social-networks/social-networks.component';
 import { InterestsGridComponent } from '../interests-grid/interests-grid.component';
+import { BioSummaryComponent } from '../bio-summary/bio-summary.component';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [CommonModule, SocialNetworksComponent, InterestsGridComponent],
+  imports: [
+    CommonModule,
+    SocialNetworksComponent,
+    InterestsGridComponent,
+    BioSummaryComponent
+  ],
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss']
 })
