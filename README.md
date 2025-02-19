@@ -7,6 +7,8 @@ A personal website for myself based on my resume.json. Allowing me to showcase m
 `npm run start`
 
 # Future ambition
+- Shared module for resume components.
+- Layout module for application wide header, and footer components.
 - Publish this site to https://stephen.traiforos.com
 - Publish the resume service as an NPM package allowing anyone to use their JSON resume to build an Angular application.
     - Unit test the service for maintainability.
