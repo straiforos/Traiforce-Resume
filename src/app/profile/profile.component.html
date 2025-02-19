@@ -3,6 +3,7 @@
   <h1>{{ basics.name }}</h1>
   <h2>{{ basics.label }}</h2>
   <div class="location">
-    {{ basics.location.city }}, {{ basics.location.region }}
+    <fa-icon [icon]="locationIcon"></fa-icon>
+    <span>{{ basics.location.city }}, {{ basics.location.region }}</span>
   </div>
 </section>
