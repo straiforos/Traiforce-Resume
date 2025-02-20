@@ -33,12 +33,21 @@ jobs:
       run: ng build resume
 
     - name: Build Main Application
-      run: ng build --configuration=${{ github.event.inputs.environment }}
+      run: ng build
 
-    - name: Deploy to Pintata CDN
-      env:
-        PINTATA_TOKEN: ${{ secrets.PINTATA_TOKEN }}
+    - name: Deploy to IPFS via Pinata
+      id: deploy
+      uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
+      with:
+        pin-name: 'triforce-resume'
+        path: './dist/triforce-resume'
+        pinata-api-key: ${{ secrets.PINATA_API_KEY }}
+        pinata-secret-api-key: ${{ secrets.PINATA_SECRET_KEY }}
+        verbose: true
+        remove-old: true
+
+    - name: Output Deployment Information
       run: |
-        # Add Pintata deployment command here
-        echo "Deploying to ${{ github.event.inputs.environment }}"
-        # Replace this with actual Pintata deployment command
+        echo "Deployment complete!"
+        echo "IPFS Hash: ${{ steps.deploy.outputs.hash }}"
+        echo "Pinata Gateway URL: https://gateway.pinata.cloud/ipfs/${{ steps.deploy.outputs.hash }}"
