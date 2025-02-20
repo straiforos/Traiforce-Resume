@@ -1,5 +1,7 @@
-<h1 class="section-title">Portfolio</h1>
-<p class="section-subtitle">Explore my recent projects and contributions</p>
+<app-section-header
+  title="Portfolio"
+  subtitle="Explore my recent projects and contributions">
+</app-section-header>
 
 <div class="grid" *ngIf="(projects$ | async) as projects">
   <div *ngFor="let project of projects" class="project-card">

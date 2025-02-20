@@ -7,16 +7,18 @@ import { SocialNetworksComponent } from '../social-networks/social-networks.comp
 import { InterestsGridComponent } from '../interests-grid/interests-grid.component';
 import { BioSummaryComponent } from '../bio-summary/bio-summary.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { SectionHeaderComponent } from '../shared/section-header/section-header.component';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
   imports: [
     CommonModule,
+    ProfileComponent,
+    BioSummaryComponent,
     SocialNetworksComponent,
     InterestsGridComponent,
-    BioSummaryComponent,
-    ProfileComponent
+    SectionHeaderComponent
   ],
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss']

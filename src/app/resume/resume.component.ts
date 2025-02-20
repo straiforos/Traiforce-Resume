@@ -8,6 +8,7 @@ import { InterestsGridComponent } from '../interests-grid/interests-grid.compone
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { SkillsComponent } from '../skills/skills.component';
 import { EducationComponent } from '../education/education.component';
+import { SectionHeaderComponent } from '../shared/section-header/section-header.component';
 
 @Component({
   selector: 'app-resume',
@@ -20,7 +21,8 @@ import { EducationComponent } from '../education/education.component';
     InterestsGridComponent,
     PortfolioComponent,
     SkillsComponent,
-    EducationComponent
+    EducationComponent,
+    SectionHeaderComponent
   ],
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss']
