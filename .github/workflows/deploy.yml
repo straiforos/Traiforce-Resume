@@ -1,0 +1,41 @@
+name: Manual Deploy to Pintata CDN
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+        - production
+        - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Build Application
+      run: npm run build
+
+    - name: Deploy to Pintata CDN
+      env:
+        PINTATA_TOKEN: ${{ secrets.PINTATA_TOKEN }}
+      run: |
+        # Add Pintata deployment command here
+        echo "Deploying to ${{ github.event.inputs.environment }}"
+        # Replace this with actual Pintata deployment command
