@@ -24,13 +24,16 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
+        node-version: '22'
 
     - name: Install Dependencies
       run: npm ci
 
-    - name: Build Application
-      run: npm run build
+    - name: Build Resume Library
+      run: ng build resume
+
+    - name: Build Main Application
+      run: ng build --configuration=${{ github.event.inputs.environment }}
 
     - name: Deploy to Pintata CDN
       env:
