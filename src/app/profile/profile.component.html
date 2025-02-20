@@ -1,5 +1,12 @@
 <section class="profile-header">
-  <img [src]="basics.image" [alt]="basics.name" class="profile-image">
+  <img
+    [ngSrc]="'comicon static shock and I.jpg'"
+    (error)="handleImageError($event)"
+    [alt]="basics.name"
+    class="profile-image"
+    priority
+    width="400"
+    height="400">
   <h1>{{ basics.name }}</h1>
   <h2>{{ basics.label }}</h2>
   <div class="location">
