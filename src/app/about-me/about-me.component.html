@@ -1,17 +1,19 @@
-<div class="about-me-container" *ngIf="(basics$ | async) as basics">
-  <app-profile [basics]="basics"></app-profile>
+<div *ngIf="(basics$ | async) as basics">
+  <section class="section">
+    <app-profile [basics]="basics"></app-profile>
+  </section>
 
-  <section class="bio-summary">
+  <section class="section">
     <app-bio-summary [summary]="basics.summary"></app-bio-summary>
   </section>
 
-  <section class="social-links">
-    <h2>Let's Connect</h2>
+  <section class="section">
+    <h2 class="section-title">Let's Connect</h2>
     <app-social-networks [profiles]="basics.profiles"></app-social-networks>
   </section>
 
-  <section class="interests" *ngIf="(interests$ | async) as interests">
-    <h2>Personal Interests</h2>
+  <section class="section" *ngIf="(interests$ | async) as interests">
+    <h2 class="section-title">Personal Interests</h2>
     <app-interests-grid [interests]="interests"></app-interests-grid>
   </section>
 </div>

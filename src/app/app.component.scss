@@ -30,6 +30,7 @@
     }
 
     .content-container {
+      flex: 1;
       max-width: 1200px;
       width: 100%;
       margin: 0 auto;
@@ -41,5 +42,11 @@
 
   app-footer {
     margin-top: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  :host .content-wrapper .content-container {
+    padding: 1rem;
   }
 }

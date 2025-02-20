@@ -1,3 +1,66 @@
+@import 'styles/mixins';
+
 /* You can add global styles to this file, and also import other style files */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Common text alignments
+.text-center {
+  text-align: center;
+}
+
+// Common section styles
+.section {
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &-title {
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+
+  &-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+}
+
+// Common grid layouts
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+
+  &-compact {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+// Common card styles
+.card {
+  background: var(--surface-lighter);
+  border-radius: 0.5rem;
+  box-shadow: var(--mat-elevation-level1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: var(--mat-elevation-level3);
+    background: var(--surface-lightest);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

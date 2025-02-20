@@ -1,3 +1,5 @@
+@import '../../styles/mixins';
+
 h1 {
   text-align: center;
   color: var(--text-primary);
@@ -11,25 +13,13 @@ h1 {
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  @include grid;
 }
 
 .project-card {
-  background: var(--surface-lighter);
-  border-radius: 0.5rem;
-  box-shadow: var(--mat-elevation-level1);
-  transition: all 0.3s ease;
-  overflow: hidden;
+  @include card;
   display: flex;
   flex-direction: column;
-
-  &:hover {
-    transform: translateY(-0.125rem);
-    box-shadow: var(--mat-elevation-level3);
-    background: var(--surface-lightest);
-  }
 }
 
 .project-content {
