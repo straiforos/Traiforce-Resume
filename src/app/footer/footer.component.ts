@@ -27,39 +27,45 @@ import { CommonModule } from '@angular/common';
     </mat-toolbar>
   `,
   styles: [`
+    // Footer toolbar styling
     mat-toolbar {
       background-color: var(--surface-lighter);
       padding: 1rem;
     }
 
+    // Container for footer content
     .footer-content {
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; // Space between copyright and social icons
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      gap: 2rem;
+      max-width: 1200px; // Match content width
+      margin: 0 auto; // Center content
+      gap: 2rem; // Space between elements
     }
 
+    // Copyright text styling
     .copyright {
       color: var(--text-secondary);
       font-size: 0.9rem;
     }
 
+    // Social networks section styling
     .footer-social-networks {
       ::ng-deep .social-networks {
         margin: 0;
-        justify-content: flex-end;
+        justify-content: flex-end; // Align icons to the right
       }
     }
 
+    // Mobile responsive adjustments
     @media (max-width: 600px) {
       .footer-content {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: column; // Stack elements vertically
+        gap: 1rem; // Reduce gap on mobile
       }
 
+      // Center social icons on mobile
       .footer-social-networks {
         ::ng-deep .social-networks {
           justify-content: center;

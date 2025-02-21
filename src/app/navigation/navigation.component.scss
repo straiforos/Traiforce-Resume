@@ -1,14 +1,19 @@
+// Navigation component styles using BEM-like naming convention
 .navigation {
+  // Container for the entire navigation bar
   &-container {
+    // Toolbar styling
     mat-toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 1rem;
 
+      // Mobile-specific adjustments
       @media (max-width: 768px) {
         padding: 0 1rem;
 
+        // Position hamburger menu button
         button[mat-icon-button] {
           margin-left: auto;
           margin-right: 0.5rem;
@@ -16,21 +21,25 @@
       }
     }
 
+    // Desktop navigation links container
     .desktop-links {
       display: flex;
       height: 100%;
       gap: 0.5rem;
       align-items: center;
 
+      // Individual navigation button styling
       [mat-button] {
         transition: all 0.3s ease;
         line-height: 2.5rem;
 
+        // Hover state for non-active links
         &:hover:not(.mat-accent) {
           border-radius: 1.25rem;
           color: var(--primary-color);
         }
 
+        // Active link styling
         &.mat-accent {
           border-radius: 1.25rem;
           color: var(--accent-color);
@@ -38,6 +47,7 @@
       }
     }
 
+    // Logo image styling
     img {
       height: 2.5rem;
       width: auto;
