@@ -1,19 +1,25 @@
+/**
+ * Navigation Component Styles
+ * This file contains all styles for the main navigation component using BEM-like naming conventions.
+ * The navigation includes both desktop and mobile (hamburger menu) layouts with responsive design.
+ */
+
 // Navigation component styles using BEM-like naming convention
 .navigation {
-  // Container for the entire navigation bar
+  // Main container for the navigation bar
   &-container {
-    // Toolbar styling
+    // Toolbar styling - contains the logo, navigation links, and mobile menu button
     mat-toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 1rem;
 
-      // Mobile-specific adjustments
+      // Responsive adjustments for mobile devices
       @media (max-width: 768px) {
         padding: 0 1rem;
 
-        // Position hamburger menu button
+        // Position the hamburger menu button to the right side
         button[mat-icon-button] {
           margin-left: auto;
           margin-right: 0.5rem;
@@ -22,24 +28,25 @@
     }
 
     // Desktop navigation links container
+    // Only visible on desktop screens, hidden on mobile
     .desktop-links {
       display: flex;
       height: 100%;
-      gap: 0.5rem;
+      gap: 0.5rem; // Space between navigation items
       align-items: center;
 
-      // Individual navigation button styling
+      // Styling for individual navigation buttons in desktop view
       [mat-button] {
-        transition: all 0.3s ease;
+        transition: all 0.3s ease; // Smooth transition for hover/active states
         line-height: 2.5rem;
 
-        // Hover state for non-active links
+        // Hover effect for non-active navigation links
         &:hover:not(.mat-accent) {
           border-radius: 1.25rem;
           color: var(--primary-color);
         }
 
-        // Active link styling
+        // Active link styling - indicates current page/route
         &.mat-accent {
           border-radius: 1.25rem;
           color: var(--accent-color);
@@ -47,11 +54,40 @@
       }
     }
 
-    // Logo image styling
+    // Mobile menu styling
+    // Uses ::ng-deep to style Material Menu component internals
+    ::ng-deep .mat-menu-panel {
+      border-radius: 8px; // Rounded corners for the menu panel
+
+      // Inner content container of the menu
+      .mat-menu-content {
+        padding: 0.5rem; // Consistent padding around menu items
+      }
+
+      // Individual menu items in mobile view
+      [mat-menu-item] {
+        transition: all 0.3s ease; // Matches desktop transition
+        border-radius: 1.25rem; // Consistent with desktop button styling
+        margin: 0.25rem 0; // Vertical spacing between menu items
+
+        // Hover state for menu items
+        &:hover {
+          color: var(--primary-color);
+          background-color: rgba(0, 0, 0, 0.04); // Subtle background change on hover
+        }
+
+        // Active menu item styling
+        &.mat-accent {
+          color: var(--accent-color);
+        }
+      }
+    }
+
+    // Logo styling - consistent across desktop and mobile
     img {
       height: 2.5rem;
-      width: auto;
-      vertical-align: middle;
+      width: auto; // Maintains aspect ratio
+      vertical-align: middle; // Aligns logo with surrounding content
     }
   }
 }
