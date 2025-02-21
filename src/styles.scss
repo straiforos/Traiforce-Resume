@@ -77,7 +77,6 @@ body {
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr; // Single column layout
-    padding: 0 1rem; // Add horizontal padding
     gap: 1rem; // Reduce gap on mobile
   }
 
