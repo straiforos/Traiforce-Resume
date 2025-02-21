@@ -25,6 +25,8 @@
 mat-toolbar {
   background-color: var(--surface-lighter);
   padding: 1rem;
+  height: auto; // Allow height to adjust based on content
+  min-height: var(--mat-toolbar-mobile-height, 56px); // Set minimum height instead of fixed height
 }
 
 // Container for footer content
@@ -54,9 +56,15 @@ mat-toolbar {
 
 // Mobile responsive adjustments
 @media (max-width: 600px) {
+  mat-toolbar {
+    height: auto; // Ensure height adapts to content
+    padding: 1.5rem 1rem; // Increase padding for better spacing when stacked
+  }
+
   .footer-content {
     flex-direction: column; // Stack elements vertically
     gap: 1rem; // Reduce gap on mobile
+    align-items: center; // Center items when stacked
   }
 
   // Center social icons on mobile
