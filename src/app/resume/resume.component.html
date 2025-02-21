@@ -39,10 +39,6 @@
   </div>
 
   <!-- Interests Section -->
-  <app-section-header
-    title="Personal Interests"
-    subtitle="What I'm passionate about outside of work">
-  </app-section-header>
   <div class="section" *ngIf="interests$ | async as interests">
     <app-interests-grid [interests]="interests"></app-interests-grid>
   </div>
