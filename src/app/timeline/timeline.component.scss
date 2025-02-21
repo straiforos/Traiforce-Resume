@@ -111,17 +111,29 @@ h4 {
 }
 
 @media (max-width: 48rem) {
+  .timeline-container {
+    padding: 1rem;
+  }
+
   .timeline {
     &::before {
-      left: 1.875rem;
+      left: 1rem;
     }
   }
 
   .timeline-item {
-    padding-left: 3.75rem;
+    padding-left: 2.5rem;
   }
 
   .timeline-dot {
-    left: 1.5rem;
+    left: 0.625rem;
+  }
+
+  .timeline-content {
+    padding: 1rem;
+  }
+
+  .highlights {
+    padding-left: 1rem;
   }
 }
