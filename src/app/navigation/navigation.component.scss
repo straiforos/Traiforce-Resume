@@ -5,6 +5,15 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 1rem;
+
+      @media (max-width: 768px) {
+        padding: 0 1rem;
+
+        button[mat-icon-button] {
+          margin-left: auto;
+          margin-right: 0.5rem;
+        }
+      }
     }
 
     .desktop-links {
