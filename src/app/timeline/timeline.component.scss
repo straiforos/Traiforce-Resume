@@ -1,7 +1,13 @@
+@use '../../styles/breakpoints' as breakpoints;
+
 .timeline-container {
   max-width: 62.5rem;
   margin: 0 auto;
   padding: 2rem;
+
+  @include breakpoints.mobile {
+    padding: 1rem;
+  }
 }
 
 h1 {
@@ -110,11 +116,7 @@ h4 {
   }
 }
 
-@media (max-width: 48rem) {
-  .timeline-container {
-    padding: 1rem;
-  }
-
+@include breakpoints.mobile {
   .timeline {
     &::before {
       left: 1rem;

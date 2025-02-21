@@ -1,0 +1,23 @@
+// Breakpoint variables
+$breakpoint-mobile: 48rem;  // 768px
+$breakpoint-tablet: 64rem;  // 1024px
+$breakpoint-desktop: 80rem; // 1280px
+
+// Breakpoint mixins
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
