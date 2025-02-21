@@ -1,4 +1,5 @@
-@import 'styles/mixins';
+@use 'styles/mixins' as mixins;
+@use 'styles/mobile-nav';
 
 /* Global styles for the application */
 html, body {
@@ -70,33 +71,6 @@ body {
     transform: translateY(-0.125rem); // Slight lift effect
     box-shadow: var(--mat-elevation-level3); // Increased shadow
     background: var(--surface-lightest); // Lighter background
-  }
-}
-
-// Material Menu Overrides for Navigation
-.mat-mdc-menu-panel {
-  border-radius: 8px !important;
-
-  .mat-mdc-menu-content {
-    padding: 0.5rem !important;
-  }
-
-  .mat-mdc-menu-item {
-    transition: all 0.3s ease !important;
-    border-radius: 1.25rem !important;
-    margin: 0.25rem 0 !important;
-    line-height: 2.5rem !important;
-
-    &:hover {
-      color: var(--primary-color) !important;
-      background-color: rgba(0, 0, 0, 0.04) !important;
-    }
-
-    &.mat-accent,
-    &.mdc-list-item--active {
-      color: var(--accent-color) !important;
-      background-color: rgba(var(--accent-color-rgb), 0.1) !important;
-    }
   }
 }
 
