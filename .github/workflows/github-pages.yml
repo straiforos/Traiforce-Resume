@@ -44,7 +44,7 @@ jobs:
         run: ng build resume
 
       - name: Build Main Application
-        run: ng build --base-href "/${{ github.event.repository.name }}/"
+        run: ng build --base-href "/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
