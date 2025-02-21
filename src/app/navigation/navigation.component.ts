@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { routes } from '../app.routes';
 // Material Design imports
@@ -25,7 +25,8 @@ import { map } from 'rxjs/operators';
   ],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
-  standalone: true
+  standalone: true,
+  encapsulation: ViewEncapsulation.None
 })
 export class NavigationComponent {
   navigationRoutes = routes.filter(route => route.path !== '**');

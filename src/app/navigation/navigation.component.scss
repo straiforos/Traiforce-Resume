@@ -25,6 +25,13 @@
           margin-right: 0.5rem;
         }
       }
+
+      // Logo styling - consistent across desktop and mobile
+      img {
+        height: 2.5rem;
+        width: auto; // Maintains aspect ratio
+        vertical-align: middle; // Aligns logo with surrounding content
+      }
     }
 
     // Desktop navigation links container
@@ -52,42 +59,6 @@
           color: var(--accent-color);
         }
       }
-    }
-
-    // Mobile menu styling
-    // Uses ::ng-deep to style Material Menu component internals
-    ::ng-deep .mat-menu-panel {
-      border-radius: 8px; // Rounded corners for the menu panel
-
-      // Inner content container of the menu
-      .mat-menu-content {
-        padding: 0.5rem; // Consistent padding around menu items
-      }
-
-      // Individual menu items in mobile view
-      [mat-menu-item] {
-        transition: all 0.3s ease; // Matches desktop transition
-        border-radius: 1.25rem; // Consistent with desktop button styling
-        margin: 0.25rem 0; // Vertical spacing between menu items
-
-        // Hover state for menu items
-        &:hover {
-          color: var(--primary-color);
-          background-color: rgba(0, 0, 0, 0.04); // Subtle background change on hover
-        }
-
-        // Active menu item styling
-        &.mat-accent {
-          color: var(--accent-color);
-        }
-      }
-    }
-
-    // Logo styling - consistent across desktop and mobile
-    img {
-      height: 2.5rem;
-      width: auto; // Maintains aspect ratio
-      vertical-align: middle; // Aligns logo with surrounding content
     }
   }
 }
