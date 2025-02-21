@@ -1,7 +1,15 @@
 <div class="footer-container">
   <mat-toolbar>
     <div class="footer-content">
-      <p>© 2024 Traiforce Group LLC. All rights reserved.</p>
+      <div class="copyright">
+        © {{ currentYear }} All rights reserved
+      </div>
+      <app-social-networks
+        *ngIf="profiles$ | async as profiles"
+        [profiles]="profiles"
+        [iconsOnly]="true"
+        class="footer-social-networks">
+      </app-social-networks>
     </div>
   </mat-toolbar>
 </div>
