@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints' as breakpoints;
+
 .experience-content {
   background: var(--surface-lighter);
   padding: 1.5rem;
@@ -48,6 +50,10 @@ h4 {
     color: var(--text-primary);
     line-height: 1.6;
     font-size: 1.1rem;
+
+    @include breakpoints.mobile {
+      font-size: 0.9rem;
+    }
 
     &:last-child {
       margin-bottom: 0;
