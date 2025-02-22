@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints' as breakpoints;
+
 /**
  * Navigation Component Styles
  * This file contains all styles for the main navigation component using BEM-like naming conventions.
@@ -18,7 +20,7 @@
       color: var(--md-sys-color-on-surface);
 
       // Responsive adjustments for mobile devices
-      @media (max-width: 768px) {
+       @include breakpoints.mobile {
         padding: 0 1rem;
 
         // Position the hamburger menu button to the right side

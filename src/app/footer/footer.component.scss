@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints' as breakpoints;
+
 .footer {
   &-container {
     background-color: var(--mat-toolbar-container-background-color);
@@ -55,7 +57,7 @@ mat-toolbar {
 }
 
 // Mobile responsive adjustments
-@media (max-width: 600px) {
+ @include breakpoints.mobile {
   mat-toolbar {
     height: auto; // Ensure height adapts to content
     padding: 1.5rem 1rem; // Increase padding for better spacing when stacked

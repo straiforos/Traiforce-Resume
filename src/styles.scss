@@ -1,5 +1,6 @@
 @use 'styles/mixins' as mixins;
 @use 'styles/mobile-nav';
+@use 'styles/breakpoints' as breakpoints;
 
 /* Global styles for the application */
 html, body {
@@ -63,14 +64,3 @@ body {
   }
 }
 
-// Mobile responsive adjustments
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr; // Single column layout
-    gap: 1rem; // Reduce gap on mobile
-  }
-
-  .content-container {
-    padding: 1rem; // Consistent padding for content
-  }
-}
