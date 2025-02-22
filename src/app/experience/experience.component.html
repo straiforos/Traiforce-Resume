@@ -1,12 +1,17 @@
-<div class="experience-content">
-  <div class="experience-date">
-    {{ experience.startDate | date:'MMM yyyy' }} - {{ experience.endDate ? (experience.endDate | date:'MMM yyyy') : 'Present' }}
-  </div>
-  <h3>{{ experience.position }}</h3>
-  <h4>
-    <a [href]="experience.url" target="_blank">{{ experience.company }}</a>
-  </h4>
-  <ul class="highlights">
-    <li *ngFor="let highlight of experience.highlights">{{ highlight }}</li>
-  </ul>
-</div>
+<mat-card class="experience-card">
+  <mat-card-header>
+    <mat-card-subtitle class="experience-date">
+      {{ experience.startDate | date:'MMM yyyy' }} - {{ experience.endDate ? (experience.endDate | date:'MMM yyyy') : 'Present' }}
+    </mat-card-subtitle>
+    <mat-card-title>{{ experience.position }}</mat-card-title>
+    <mat-card-subtitle>
+      <a [href]="experience.url" target="_blank" class="company-link">{{ experience.company }}</a>
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <ul class="highlights">
+      <li *ngFor="let highlight of experience.highlights">{{ highlight }}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>

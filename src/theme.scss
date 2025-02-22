@@ -5,110 +5,123 @@
 @use 'styles/button-overrides' as button;
 @use 'styles/chip-overrides' as chip;
 @use 'styles/card-overrides' as card;
+@use 'styles_theme-colors' as theme-colors;
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
+// Include the common styles for Angular Material
 @include mat.core();
 
-// Define the palettes
-$primary: mat.m2-define-palette(mat.$m2-cyan-palette);
-$accent: mat.m2-define-palette(mat.$m2-orange-palette);
-$warn: mat.m2-define-palette(mat.$m2-red-palette);
-
-// Create a surface palette based on grey
-$surface-palette: mat.m2-define-palette(mat.$m2-grey-palette);
-
-// Create the theme
-$theme: mat.m2-define-dark-theme((
+// Create the M3 theme
+$theme: mat.define-theme((
   color: (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn
+    theme-type: dark,
+    primary: theme-colors.$primary-palette,
+    tertiary: theme-colors.$tertiary-palette
+  ),
+  typography: (
+    plain-family: Roboto,
+    brand-family: Roboto,
+    bold-weight: 700,
+    medium-weight: 500,
+    regular-weight: 400
+  ),
+  density: (
+    scale: 0
   )
 ));
 
-// Apply the theme
-@include mat.all-component-themes($theme);
-@include button.apply-button-overrides($theme);
-@include chip.apply-chip-overrides($theme);
-@include card.apply-card-overrides($theme);
+// Wrap component theme includes in html selector as required by M3
+html {
+  // Apply the theme to all components
+  @include mat.all-component-themes($theme);
 
-// Get the color config from the theme
-$color-config: mat.m2-get-color-config($theme);
-$foreground: map.get($color-config, 'foreground');
-$background: map.get($color-config, 'background');
+  // Add backwards compatibility for color variants if needed
+  @include mat.color-variants-backwards-compatibility($theme);
+
+  // Apply custom component overrides
+  @include button.apply-button-overrides($theme);
+  @include chip.apply-chip-overrides($theme);
+  @include card.apply-card-overrides($theme);
+}
 
 // Define CSS custom properties for use in components
 :root {
-  // Theme colors
-  --primary-color: #{mat.m2-get-color-from-palette($primary)};
-  --primary-lighter-color: #{mat.m2-get-color-from-palette($primary, lighter)};
-  --primary-darker-color: #{mat.m2-get-color-from-palette($primary, darker)};
-  --accent-color: #{mat.m2-get-color-from-palette($accent)};
-  --accent-lighter-color: #{mat.m2-get-color-from-palette($accent, lighter)};
-  --accent-darker-color: #{mat.m2-get-color-from-palette($accent, darker)};
-  --warn-color: #{mat.m2-get-color-from-palette($warn)};
+  // Theme colors using M3 color tokens
+  --md-sys-color-primary: #{mat.get-theme-color($theme, primary, 70)};
+  --md-sys-color-primary-container: #{mat.get-theme-color($theme, primary, 90)};
+  --md-sys-color-on-primary: #{mat.get-theme-color($theme, primary, 100)};
+  --md-sys-color-on-primary-container: #{mat.get-theme-color($theme, primary, 10)};
 
-  // Surface colors - adjusted for better contrast
-  --surface-default: #{mat.m2-get-color-from-palette($surface-palette, 900)}; // Background
-  --surface-lighter: #{mat.m2-get-color-from-palette($surface-palette, 800)}; // Cards
-  --surface-lightest: #{mat.m2-get-color-from-palette($surface-palette, 600)}; // Card hover/active states
+  // Secondary colors from the palette directly
+  --md-sys-color-secondary: #{map.get(theme-colors.$secondary-palette, 35)};
+  --md-sys-color-secondary-container: #{map.get(theme-colors.$secondary-palette, 90)};
+  --md-sys-color-on-secondary: #{map.get(theme-colors.$secondary-palette, 100)};
+  --md-sys-color-on-secondary-container: #{map.get(theme-colors.$secondary-palette, 10)};
 
-  // Text colors for dark theme
-  --text-primary: rgba(255, 255, 255, 0.87);
-  --text-secondary: rgba(255, 255, 255, 0.6);
-  --text-hint: rgba(255, 255, 255, 0.38);
-  --text-disabled: rgba(255, 255, 255, 0.38);
+  --md-sys-color-tertiary: #{mat.get-theme-color($theme, tertiary, 60)};
+  --md-sys-color-tertiary-container: #{mat.get-theme-color($theme, tertiary, 90)};
+  --md-sys-color-on-tertiary: #{mat.get-theme-color($theme, tertiary, 100)};
+  --md-sys-color-on-tertiary-container: #{mat.get-theme-color($theme, tertiary, 10)};
 
-  // Other foreground colors
-  --divider-color: rgba(255, 255, 255, 0.12);
-  --icon-color: rgba(255, 255, 255, 0.6);
+  // Surface system with distinct elevation levels
+  --md-sys-color-surface: #{mat.get-theme-color($theme, neutral, 6)}; // Base surface
+  --md-sys-color-surface-dim: #{mat.get-theme-color($theme, neutral, 4)}; // Lowest elevation
+  --md-sys-color-surface-container-lowest: #{mat.get-theme-color($theme, neutral, 10)}; // Very subtle elevation
+  --md-sys-color-surface-container-low: #{mat.get-theme-color($theme, neutral, 12)}; // Subtle elevation
+  --md-sys-color-surface-container: #{mat.get-theme-color($theme, neutral, 20)}; // Default container
+  --md-sys-color-surface-container-high: #{mat.get-theme-color($theme, neutral, 25)}; // Higher elevation
+  --md-sys-color-surface-container-highest: #{mat.get-theme-color($theme, neutral, 35)}; // Highest elevation
+  --md-sys-color-surface-bright: #{mat.get-theme-color($theme, neutral, 40)}; // Brightest surface
 
-  // Button colors
-  --mdc-filled-button-container-color: #{mat.m2-get-color-from-palette($accent)};
+  // On colors for proper contrast
+  --md-sys-color-on-surface: #{mat.get-theme-color($theme, neutral, 90)};
+  --md-sys-color-on-surface-variant: #{mat.get-theme-color($theme, neutral-variant, 80)};
+
+  // Outline colors for borders and dividers
+  --md-sys-color-outline: #{mat.get-theme-color($theme, neutral-variant, 60)};
+  --md-sys-color-outline-variant: #{mat.get-theme-color($theme, neutral-variant, 30)};
+
+  // State layers for hover/focus states
+  --md-sys-state-hover-opacity: 0.08;
+  --md-sys-state-focus-opacity: 0.12;
+  --md-sys-state-pressed-opacity: 0.12;
+  --md-sys-state-dragged-opacity: 0.16;
 }
 
 // Global text styles
 body {
-  color: var(--text-primary);
-  background-color: var(--surface-default);
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
+  margin: 0;
+  font-family: var(--md-sys-typescale-body-large-font);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--text-primary);
+  color: var(--md-sys-color-on-surface);
   margin: 0;
 }
 
 p {
-  color: var(--text-primary);
+  color: var(--md-sys-color-on-surface);
   margin: 0;
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--md-sys-color-primary);
   text-decoration: none;
 
   &:hover {
-    color: var(--primary-lighter-color);
+    color: var(--md-sys-color-primary-container);
   }
 }
 
 .text-secondary {
-  color: var(--text-secondary);
-}
-
-.text-hint {
-  color: var(--text-hint);
-}
-
-.text-disabled {
-  color: var(--text-disabled);
+  color: var(--md-sys-color-on-surface-variant);
 }
 
 .divider {
-  background-color: var(--divider-color);
+  background-color: var(--md-sys-color-outline-variant);
 }
 
 .icon {
-  color: var(--icon-color);
+  color: var(--md-sys-color-on-surface-variant);
 }
