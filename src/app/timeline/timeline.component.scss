@@ -13,7 +13,7 @@
 h1 {
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--text-primary);
+  color: var(--md-sys-color-on-surface);
   font-size: 2.5rem;
 }
 
@@ -28,7 +28,7 @@ h1 {
     top: 0;
     bottom: 0;
     width: 0.125rem;
-    background: var(--surface-lighter);
+    background: var(--md-sys-color-surface-container-high);
   }
 }
 
@@ -48,35 +48,34 @@ h1 {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background: var(--accent-color);
-  border: 0.125rem solid var(--surface-default);
+  background: var(--md-sys-color-secondary);
+  border: 0.125rem solid var(--md-sys-color-surface);
   box-shadow: var(--mat-elevation-level1);
   transition: all 0.3s ease;
 
   &.active {
-    background: var(--primary-color);
+    background: var(--md-sys-color-primary);
     box-shadow: var(--mat-elevation-level2);
   }
 }
 
-
 h3 {
   margin: 0;
-  color: var(--primary-color);
+  color: var(--md-sys-color-primary);
   font-size: 1.25rem;
 }
 
 h4 {
   margin: 0.5rem 0;
-  color: var(--text-secondary);
+  color: var(--md-sys-color-on-surface-variant);
 
   a {
-    color: var(--accent-color);
+    color: var(--md-sys-color-secondary);
     text-decoration: none;
     transition: all 0.3s ease;
 
     &:hover {
-      color: var(--accent-lighter-color);
+      color: var(--md-sys-color-secondary-container);
     }
   }
 }
