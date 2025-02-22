@@ -1,15 +1,27 @@
-<div class="education-card">
-  <h3>{{ education.institution }}</h3>
-  <p class="degree">{{ education.studyType }} in {{ education.area }}</p>
-  <p class="score">GPA: {{ education.score }}</p>
-  <div *ngIf="education.courses.length" class="courses">
-    <h4>Key Courses:</h4>
-    <div class="course-tags">
-      <mat-chip-set>
-        <mat-chip *ngFor="let course of education.courses" color="accent">
-          {{ course }}
-        </mat-chip>
-      </mat-chip-set>
-    </div>
-  </div>
-</div>
+<app-section-header title="Education"></app-section-header>
+<ng-container *ngIf="education$ | async as educations">
+  <ng-container *ngFor="let education of educations">
+    <mat-card class="education-card">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{ education.institution }}</mat-card-title>
+          <mat-card-subtitle>{{ education.studyType }} in {{ education.area }}</mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p class="score">GPA: {{ education.score }}</p>
+        <div *ngIf="education.courses.length" class="courses">
+          <h4>Key Courses:</h4>
+          <div class="course-tags">
+            <mat-chip-set>
+              <mat-chip *ngFor="let course of education.courses" color="accent">
+                {{ course }}
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</ng-container>
