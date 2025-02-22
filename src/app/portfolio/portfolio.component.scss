@@ -49,12 +49,6 @@
   flex-direction: column;
 }
 
-.description {
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
 .meta {
   margin-bottom: 1.5rem;
 }
@@ -63,7 +57,6 @@
   margin-bottom: 0.5rem;
 
   strong {
-    color: var(--text-primary);
     margin-right: 0.5rem;
   }
 
@@ -82,8 +75,6 @@
 }
 
 .technologies {
-  margin-bottom: auto;
-
   .mat-mdc-chip-set {
     display: flex;
     flex-wrap: wrap;
