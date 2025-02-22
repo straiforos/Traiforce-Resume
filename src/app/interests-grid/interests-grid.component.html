@@ -5,12 +5,18 @@
 </app-section-header>
 
 <div class="interests-grid">
-  <div *ngFor="let interest of interests$ | async" class="interest-card">
-    <h3>{{ interest.name }}</h3>
-    <div class="keywords">
-      <span *ngFor="let keyword of interest.keywords" class="keyword">
-        {{ keyword }}
-      </span>
-    </div>
-  </div>
+  <mat-card *ngFor="let interest of interests$ | async">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ interest.name }}</mat-card-title>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-chip-set>
+        <mat-chip *ngFor="let keyword of interest.keywords">
+          {{ keyword }}
+        </mat-chip>
+      </mat-chip-set>
+    </mat-card-content>
+  </mat-card>
 </div>
