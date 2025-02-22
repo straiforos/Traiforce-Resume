@@ -1,3 +1,5 @@
+@use "../styles/breakpoints" as breakpoints;
+
 :host {
   display: flex;
   flex-direction: column;
@@ -26,7 +28,7 @@
 
     // Add a lighter overlay
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
       background-color: rgba(255, 255, 255, 0.05);
@@ -42,24 +44,17 @@
       position: relative;
       z-index: 1;
       box-sizing: border-box; // Include padding in width calculation
-    }
-  }
-
-  app-footer {
-    margin-top: auto;
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  :host {
-    .content-wrapper {
-      .content-container {
+      @include breakpoints.mobile {
         padding: 1rem;
         margin: 0; // Remove margin on mobile
         width: 100%;
         max-width: 100%;
       }
     }
+  }
+
+  app-footer {
+    margin-top: auto;
+    width: 100%;
   }
 }

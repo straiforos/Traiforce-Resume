@@ -17,14 +17,14 @@
     color: var(--md-sys-color-on-surface) !important;
 
     &:hover {
-      color: var(--md-sys-color-primary) !important;
-      background-color: var(--md-sys-color-surface-container-high) !important;
+      color: var(--md-sys-color-tertiary) !important;
+      background-color: var(--md-sys-color-surface-container) !important;
     }
 
     &.mat-accent,
     &.mdc-list-item--active {
-      color: var(--md-sys-color-secondary) !important;
-      background-color: var(--md-sys-color-secondary-container) !important;
+      color: var(--md-sys-color-primary) !important;
+      background-color: var(--md-sys-color-surface-container-high) !important;
     }
   }
 }

@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints' as breakpoints;
+
 .resume-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -7,7 +9,7 @@
 
 
 // TODO migrate into each component and use breakpoint mixin.
-@media (max-width: 768px) {
+ @include breakpoints.mobile {
   .resume-container {
     padding: 1rem;
   }
