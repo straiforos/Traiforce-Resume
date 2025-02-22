@@ -5,9 +5,11 @@
   <div *ngIf="education.courses.length" class="courses">
     <h4>Key Courses:</h4>
     <div class="course-tags">
-      <span *ngFor="let course of education.courses" class="course-tag">
-        {{ course }}
-      </span>
+      <mat-chip-set>
+        <mat-chip *ngFor="let course of education.courses" color="accent">
+          {{ course }}
+        </mat-chip>
+      </mat-chip-set>
     </div>
   </div>
 </div>

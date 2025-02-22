@@ -36,23 +36,11 @@
     }
 
     .course-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 0.5rem 0;
+      margin-top: 0.5rem;
 
-      .course-tag {
-        background: var(--accent-color);
-        color: var(--surface-default);
-        padding: 0.25rem 0.75rem;
-        border-radius: 15px;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-
-        &:hover {
-          background: var(--accent-lighter-color);
-          transform: translateY(-1px);
-        }
+      .mat-mdc-chip-set {
+        display: flex;
+        flex-wrap: wrap;
       }
     }
   }
