@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+
+@mixin apply-chip-overrides($theme) {
+  @include mat.chips-theme($theme);
+
+  .mat-mdc-chip {
+    --mdc-chip-container-height: 1.75rem;
+    --mdc-chip-container-shape-radius: 0.9375rem;
+    --mdc-chip-with-trailing-icon-padding-left: 0.75rem;
+    --mdc-chip-with-trailing-icon-padding-right: 0.75rem;
+    --mdc-chip-label-padding-left: 0.75rem;
+    --mdc-chip-label-padding-right: 0.75rem;
+    font-size: 0.9rem;
+
+    &.mat-mdc-standard-chip {
+      &.mat-accent {
+        --mdc-chip-elevated-container-color: var(--accent-color);
+        --mdc-chip-label-text-color: var(--surface-default);
+
+        &:hover {
+          --mdc-chip-elevated-container-color: var(--accent-lighter-color);
+        }
+      }
+
+      // Default style for tech chips
+      &:not(.mat-accent) {
+        --mdc-chip-elevated-container-color: var(--surface-default);
+        --mdc-chip-label-text-color: var(--text-secondary);
+        font-size: 0.85rem;
+
+        &:hover {
+          --mdc-chip-elevated-container-color: var(--surface-lighter);
+        }
+      }
+    }
+  }
+
+  .mat-mdc-chip-set {
+    --mdc-chip-spacing-x: 0.25rem;
+    --mdc-chip-spacing-y: 0.25rem;
+  }
+}

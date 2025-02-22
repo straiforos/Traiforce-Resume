@@ -16,17 +16,21 @@
       <div class="meta">
         <div class="roles">
           <strong>Role:</strong>
-          <span *ngFor="let role of project.role" class="role-tag">
-            {{ role }}
-          </span>
+          <mat-chip-set>
+            <mat-chip *ngFor="let role of project.role" color="accent">
+              {{ role }}
+            </mat-chip>
+          </mat-chip-set>
         </div>
         <div class="entity"><strong>Entity:</strong> {{ project.entity }}</div>
       </div>
 
       <div class="technologies">
-        <span *ngFor="let keyword of project.keywords" class="tech-tag">
-          {{ keyword }}
-        </span>
+        <mat-chip-set>
+          <mat-chip *ngFor="let keyword of project.keywords" class="tech-chip">
+            {{ keyword }}
+          </mat-chip>
+        </mat-chip-set>
       </div>
     </mat-card-content>
     <mat-card-footer>

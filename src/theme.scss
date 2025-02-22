@@ -3,6 +3,7 @@
 @use '@angular/material' as mat;
 @use 'sass:map';
 @use 'styles/button-overrides' as button;
+@use 'styles/chip-overrides' as chip;
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -28,6 +29,7 @@ $theme: mat.m2-define-dark-theme((
 // Apply the theme
 @include mat.all-component-themes($theme);
 @include button.apply-button-overrides($theme);
+@include chip.apply-chip-overrides($theme);
 
 // Get the color config from the theme
 $color-config: mat.m2-get-color-config($theme);

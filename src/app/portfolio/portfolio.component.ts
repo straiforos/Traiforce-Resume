@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { SectionHeaderComponent } from '../shared/section-header/section-header.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
   selector: 'app-portfolio',
@@ -14,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
     SectionHeaderComponent,
     MatCardModule,
     MatButtonModule,
+    MatChipsModule
   ],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
