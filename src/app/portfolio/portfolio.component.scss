@@ -86,4 +86,9 @@
   display: flex;
   justify-content: center;
   background: transparent;
+
+  // Link button should use the whole footer.
+  a {
+    width: 100%
+  }
 }
