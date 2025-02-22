@@ -15,5 +15,5 @@ import { CommonModule } from '@angular/common';
 export class SectionHeaderComponent {
   @Input({ required: true }) title!: string;
   @Input() subtitle?: string;
-  @Input() showHeader: boolean = true;
+  @Input() showHeader = true;
 }

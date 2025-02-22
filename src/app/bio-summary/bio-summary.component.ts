@@ -24,5 +24,5 @@ import { CommonModule } from '@angular/common';
   `]
 })
 export class BioSummaryComponent {
-  @Input() summary: string = '';
+  @Input() summary = '';
 }

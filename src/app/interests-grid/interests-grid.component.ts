@@ -14,7 +14,7 @@ import { INTERESTS_SECTION } from './interests.constants';
 })
 export class InterestsGridComponent implements OnInit {
   @Input({ required: true }) interests!: Interest[];
-  @Input() showHeader: boolean = true;
+  @Input() showHeader = true;
   @Input() title: string = INTERESTS_SECTION.title;
   @Input() subtitle: string = INTERESTS_SECTION.subtitle;
 

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, IconDefinition } from '@fortawesome/angular-fontawesome';
 import { Profile } from 'resume';
 import {
   faGithub,
@@ -27,10 +27,10 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 })
 export class SocialNetworksComponent {
   @Input() profiles: Profile[] = [];
-  @Input() iconsOnly: boolean = false;
+  @Input() iconsOnly = false;
 
   // Icon mapping for social networks
-  private networkIcons: { [key: string]: any } = {
+  private networkIcons: Record<string, IconDefinition> = {
     'GitHub': faGithub,
     'LinkedIn': faLinkedin,
     'Twitter': faTwitter,
@@ -46,7 +46,7 @@ export class SocialNetworksComponent {
     'Website': faGlobe
   };
 
-  getIconForNetwork(network: string): any {
+  getIconForNetwork(network: string): IconDefinition {
     return this.networkIcons[network] || faGlobe;
   }
 }

@@ -35,7 +35,7 @@
     </ng-container>
 
     <!-- Desktop menu -->
-    <ng-container *ngIf="!(isHandset$ | async)">
+    <ng-container *ngIf="(isHandset$ | async) === false">
       <div class="desktop-links">
         <ng-template [ngTemplateOutlet]="navItems" [ngTemplateOutletContext]="{ displayType: 'desktop' }"></ng-template>
       </div>
