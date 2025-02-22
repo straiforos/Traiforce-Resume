@@ -63,24 +63,6 @@ body {
   }
 }
 
-// Common card component styling
-.card {
-  background: var(--surface-lighter);
-  border-radius: 0.5rem;
-  box-shadow: var(--mat-elevation-level1);
-  transition: all 0.3s ease; // Smooth transitions
-  overflow: hidden;
-  width: 100%;
-  max-width: 100%; // Prevent card overflow
-
-  // Card hover effects
-  &:hover {
-    transform: translateY(-0.125rem); // Slight lift effect
-    box-shadow: var(--mat-elevation-level3); // Increased shadow
-    background: var(--surface-lightest); // Lighter background
-  }
-}
-
 // Mobile responsive adjustments
 @media (max-width: 768px) {
   .grid {

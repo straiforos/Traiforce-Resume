@@ -5,7 +5,7 @@
 </app-section-header>
 
 <div class="skills-grid" *ngIf="skills$ | async as skills">
-  <mat-card *ngFor="let skill of skills" class="skill-card">
+  <mat-card *ngFor="let skill of skills">
     <mat-card-header>
       <mat-card-title-group>
         <mat-card-title>{{ skill.name }}</mat-card-title>

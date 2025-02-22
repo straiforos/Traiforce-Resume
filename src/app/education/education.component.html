@@ -1,7 +1,7 @@
 <app-section-header title="Education"></app-section-header>
 <ng-container *ngIf="education$ | async as educations">
   <ng-container *ngFor="let education of educations">
-    <mat-card class="education-card">
+    <mat-card>
       <mat-card-header>
         <mat-card-title-group>
           <mat-card-title>{{ education.institution }}</mat-card-title>

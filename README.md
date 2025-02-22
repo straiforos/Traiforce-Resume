@@ -9,7 +9,6 @@ A personal website for myself based on my resume.json. Allowing me to showcase m
 # Future ambition
 - Improved styling consistencey
   - Breakpoints
-  - Card, and Grid classes/mixins.
 - Shared module for resume components.
 - Layout module for application wide header, and footer components.
 - Publish the resume service as an NPM package allowing anyone to use their JSON resume to build an Angular application.

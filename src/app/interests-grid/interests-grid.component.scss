@@ -6,16 +6,6 @@
   gap: 1.5rem;
 }
 
-.interest-card {
-  @include card;
-  padding: 1.5rem;
-
-  h3 {
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-  }
-}
-
 .mat-mdc-card-content {
   .mat-mdc-chip-set {
     display: flex;
