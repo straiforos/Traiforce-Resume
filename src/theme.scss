@@ -46,18 +46,18 @@ html {
 // Define CSS custom properties for use in components
 :root {
   // Theme colors using M3 color tokens
-  --md-sys-color-primary: #{mat.get-theme-color($theme, primary, 40)};
+  --md-sys-color-primary: #{mat.get-theme-color($theme, primary, 80)};
   --md-sys-color-primary-container: #{mat.get-theme-color($theme, primary, 90)};
   --md-sys-color-on-primary: #{mat.get-theme-color($theme, primary, 100)};
   --md-sys-color-on-primary-container: #{mat.get-theme-color($theme, primary, 10)};
 
   // Secondary colors from the palette directly
-  --md-sys-color-secondary: #{map.get(theme-colors.$secondary-palette, 40)};
+  --md-sys-color-secondary: #{map.get(theme-colors.$secondary-palette, 35)};
   --md-sys-color-secondary-container: #{map.get(theme-colors.$secondary-palette, 90)};
   --md-sys-color-on-secondary: #{map.get(theme-colors.$secondary-palette, 100)};
   --md-sys-color-on-secondary-container: #{map.get(theme-colors.$secondary-palette, 10)};
 
-  --md-sys-color-tertiary: #{mat.get-theme-color($theme, tertiary, 40)};
+  --md-sys-color-tertiary: #{mat.get-theme-color($theme, tertiary, 60)};
   --md-sys-color-tertiary-container: #{mat.get-theme-color($theme, tertiary, 90)};
   --md-sys-color-on-tertiary: #{mat.get-theme-color($theme, tertiary, 100)};
   --md-sys-color-on-tertiary-container: #{mat.get-theme-color($theme, tertiary, 10)};
@@ -67,10 +67,10 @@ html {
   --md-sys-color-surface-dim: #{mat.get-theme-color($theme, neutral, 4)}; // Lowest elevation
   --md-sys-color-surface-container-lowest: #{mat.get-theme-color($theme, neutral, 10)}; // Very subtle elevation
   --md-sys-color-surface-container-low: #{mat.get-theme-color($theme, neutral, 12)}; // Subtle elevation
-  --md-sys-color-surface-container: #{mat.get-theme-color($theme, neutral, 17)}; // Default container
-  --md-sys-color-surface-container-high: #{mat.get-theme-color($theme, neutral, 22)}; // Higher elevation
-  --md-sys-color-surface-container-highest: #{mat.get-theme-color($theme, neutral, 24)}; // Highest elevation
-  --md-sys-color-surface-bright: #{mat.get-theme-color($theme, neutral, 30)}; // Brightest surface
+  --md-sys-color-surface-container: #{mat.get-theme-color($theme, neutral, 20)}; // Default container
+  --md-sys-color-surface-container-high: #{mat.get-theme-color($theme, neutral, 25)}; // Higher elevation
+  --md-sys-color-surface-container-highest: #{mat.get-theme-color($theme, neutral, 35)}; // Highest elevation
+  --md-sys-color-surface-bright: #{mat.get-theme-color($theme, neutral, 40)}; // Brightest surface
 
   // On colors for proper contrast
   --md-sys-color-on-surface: #{mat.get-theme-color($theme, neutral, 90)};
