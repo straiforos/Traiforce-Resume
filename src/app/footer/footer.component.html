@@ -5,8 +5,6 @@
         © {{ currentYear }} All rights reserved
       </div>
       <app-social-networks
-        *ngIf="profiles$ | async as profiles"
-        [profiles]="profiles"
         [iconsOnly]="true"
         class="footer-social-networks">
       </app-social-networks>

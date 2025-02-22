@@ -1,10 +1,17 @@
-<div class="social-networks" [class.icons-only]="iconsOnly">
-  <a *ngFor="let profile of profiles"
-     [href]="profile.url"
-     target="_blank"
-     class="social-link"
-     [title]="profile.network">
-    <fa-icon [icon]="getIconForNetwork(profile.network)" class="social-icon"></fa-icon>
-    <span class="network-name" *ngIf="!iconsOnly">{{ profile.network }}</span>
-  </a>
-</div>
+<ng-container *ngIf="basics$ | async as basics">
+  <div class="social-networks" [class.icons-only]="iconsOnly">
+    <a
+      *ngFor="let profile of basics.profiles"
+      [href]="profile.url"
+      target="_blank"
+      class="social-link"
+      [title]="profile.network"
+    >
+      <fa-icon
+        [icon]="getIconForNetwork(profile.network)"
+        class="social-icon"
+      ></fa-icon>
+      <span class="network-name" *ngIf="!iconsOnly">{{ profile.network }}</span>
+    </a>
+  </div>
+</ng-container>

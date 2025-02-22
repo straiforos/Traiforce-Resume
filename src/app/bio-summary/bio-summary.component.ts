@@ -1,13 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ResumeService, Basics } from 'resume';
+import { Observable } from 'rxjs';
+import { SectionHeaderComponent } from '../shared/section-header/section-header.component';
 
 @Component({
   selector: 'app-bio-summary',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SectionHeaderComponent],
   template: `
-    <h2>About Me</h2>
-    <p>{{ summary }}</p>
+  <ng-container *ngIf="basics$ | async as basics">
+    <app-section-header title="About Me"></app-section-header>
+    <p>{{ basics.summary }}</p>
+  </ng-container>
   `,
   styles: [`
     p {
@@ -24,5 +29,7 @@ import { CommonModule } from '@angular/common';
   `]
 })
 export class BioSummaryComponent {
-  @Input() summary = '';
+  basics$: Observable<Basics> = this.resumeService.basics$;
+
+  constructor(private readonly resumeService: ResumeService) {}
 }

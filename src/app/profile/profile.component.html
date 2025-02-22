@@ -1,4 +1,4 @@
-<section class="profile-header">
+<section *ngIf="basics$ | async as basics" class="profile">
   <img
     [ngSrc]="'comicon static shock and I.jpg'"
     (error)="handleImageError($event)"
@@ -6,16 +6,17 @@
     class="profile-image"
     priority
     width="400"
-    height="400">
-  <h1>{{ basics.name }}</h1>
-  <h2>{{ basics.label }}</h2>
+    height="400"
+  />
+  <app-section-header
+    [title]="basics.name"
+    [subtitle]="basics.label"
+  ></app-section-header>
   <div class="location">
     <fa-icon [icon]="locationIcon"></fa-icon>
     <span>{{ basics.location.city }}, {{ basics.location.region }}</span>
   </div>
   <div class="actions">
-    <button mat-raised-button color="primary">
-      <ng-content></ng-content>
-    </button>
+    <ng-content></ng-content>
   </div>
 </section>

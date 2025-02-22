@@ -1,45 +1,20 @@
-<div class="resume-container" *ngIf="basics$ | async as basics">
+<div class="page">
   <!-- Profile Section with Contact Info -->
-  <app-profile [basics]="basics">
-    <div class="contact-info">
-      <p>{{ basics.email }} | {{ basics.phone }}</p>
-    </div>
-    <app-social-networks [profiles]="basics.profiles" [iconsOnly]="false"></app-social-networks>
+  <app-profile>
+    <app-contact-info></app-contact-info>
+    <app-social-networks [iconsOnly]="false"></app-social-networks>
   </app-profile>
 
   <!-- Work Experience Section -->
-  <app-section-header
-    title="Work Experience"
-    subtitle="My professional journey and achievements">
-  </app-section-header>
-  <section class="work-section" *ngIf="work$ | async as work">
-    <div class="experience-list">
-      <app-experience *ngFor="let job of work" [experience]="job"></app-experience>
-    </div>
-  </section>
+  <app-experiences></app-experiences>
 
   <!-- Education Section -->
-  <app-section-header title="Education"></app-section-header>
-  <section class="education-section" *ngIf="education$ | async as education">
-    <app-education *ngFor="let edu of education" [education]="edu"></app-education>
-  </section>
+  <app-education></app-education>
 
-  <!-- Skills Section -->
-  <app-section-header
-    title="Skills"
-    subtitle="Technologies and tools I work with">
-  </app-section-header>
-  <div class="section" *ngIf="skills$ | async as skills">
-    <app-skills [skills]="skills"></app-skills>
-  </div>
-
+  <app-skills></app-skills>
   <!-- Projects Section -->
-  <div class="section">
-    <app-portfolio></app-portfolio>
-  </div>
+  <app-portfolio></app-portfolio>
 
   <!-- Interests Section -->
-  <div class="section" *ngIf="interests$ | async as interests">
-    <app-interests-grid [interests]="interests"></app-interests-grid>
-  </div>
+  <app-interests-grid></app-interests-grid>
 </div>

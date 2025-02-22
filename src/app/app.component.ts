@@ -9,7 +9,7 @@ import { ResumeModule } from 'resume';
   standalone: true,
   imports: [RouterOutlet, FooterComponent, HeaderComponent, ResumeModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'Triforce-Resume';

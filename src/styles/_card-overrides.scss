@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+
+@mixin apply-card-overrides($theme) {
+  @include mat.card-theme($theme);
+
+  .mat-mdc-card {
+    --mdc-elevated-card-container-color: var(--surface-lighter);
+    --mdc-elevated-card-container-shape: 0.75rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-0.125rem);
+      box-shadow: var(--mat-elevation-level3);
+      --mdc-elevated-card-container-color: var(--surface-lightest);
+    }
+  }
+
+  .mat-mdc-card-header {
+    padding: 1rem 1rem 0;
+  }
+
+  .mat-mdc-card-title {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .mat-mdc-card-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .mat-mdc-card-content {
+    padding: 0 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}

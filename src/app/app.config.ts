@@ -8,7 +8,7 @@ import { ResumeModule } from 'resume';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes, withComponentInputBinding()),
+    provideRouter(routes),
     provideAnimationsAsync(),
     provideHttpClient(),
     ResumeModule

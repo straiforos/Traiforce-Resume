@@ -1,0 +1,13 @@
+<app-section-header
+  title="Work Experience"
+  subtitle="My professional journey and achievements"
+>
+</app-section-header>
+<ng-container class="work-section" *ngIf="work$ | async as work">
+  <div class="experience-list">
+    <app-experience
+      *ngFor="let job of work"
+      [experience]="job"
+    ></app-experience>
+  </div>
+</ng-container>

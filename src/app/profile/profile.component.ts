@@ -1,18 +1,22 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Basics } from 'resume';
+import { Basics, ResumeService } from 'resume';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { Observable, take, tap } from 'rxjs';
+import { SectionHeaderComponent } from "../shared/section-header/section-header.component";
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, NgOptimizedImage],
+  imports: [CommonModule, FontAwesomeModule, NgOptimizedImage, SectionHeaderComponent],
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
-  @Input() basics!: Basics;
+  basics$: Observable<Basics> = this.resumeService.basics$;
+
+  constructor(private readonly resumeService: ResumeService) {}
   locationIcon = faLocationDot;
 
   /**
@@ -21,8 +25,6 @@ export class ProfileComponent {
    */
   handleImageError(event: Event) {
     const img = event.target as HTMLImageElement;
-    if (img && this.basics.image) {
-      img.src = this.basics.image;
-    }
+    this.basics$.pipe(tap((basics) => (img.src = basics.image)), take(1)).subscribe();
   }
 }

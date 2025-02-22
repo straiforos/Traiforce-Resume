@@ -1,18 +1,11 @@
-<div *ngIf="(basics$ | async) as basics">
-  <section class="section">
-    <app-profile [basics]="basics"></app-profile>
-  </section>
+<div class="page">
+  <app-profile></app-profile>
 
-  <section class="section">
-    <app-bio-summary [summary]="basics.summary"></app-bio-summary>
-  </section>
+  <app-bio-summary></app-bio-summary>
 
-  <section class="section">
-    <app-section-header title="Let's Connect"></app-section-header>
-    <app-social-networks [profiles]="basics.profiles"></app-social-networks>
-  </section>
+  <app-section-header title="Let's Connect"></app-section-header>
+  <app-social-networks></app-social-networks>
 
-  <section class="section" *ngIf="(interests$ | async) as interests">
-    <app-interests-grid [interests]="interests"></app-interests-grid>
-  </section>
+  <app-interests-grid></app-interests-grid>
 </div>
+

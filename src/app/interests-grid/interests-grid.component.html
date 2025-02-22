@@ -1,11 +1,11 @@
 <app-section-header
-  [title]="title"
-  [subtitle]="subtitle"
+  [title]="'Personal Interests'"
+  [subtitle]="'What I\'m passionate about outside of work'"
   [showHeader]="showHeader">
 </app-section-header>
 
 <div class="interests-grid">
-  <div *ngFor="let interest of interests" class="interest-card">
+  <div *ngFor="let interest of interests$ | async" class="interest-card">
     <h3>{{ interest.name }}</h3>
     <div class="keywords">
       <span *ngFor="let keyword of interest.keywords" class="keyword">

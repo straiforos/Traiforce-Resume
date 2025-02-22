@@ -1,0 +1,15 @@
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  app-experience {
+    border-bottom: 1px solid var(--surface-lightest);
+    padding-bottom: 1.5rem;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+}

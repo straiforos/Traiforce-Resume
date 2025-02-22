@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule, IconDefinition } from '@fortawesome/angular-fontawesome';
-import { Profile } from 'resume';
+import { ResumeService, Basics } from 'resume';
 import {
   faGithub,
   faLinkedin,
@@ -17,6 +17,7 @@ import {
   faReddit
 } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-social-networks',
@@ -26,11 +27,12 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./social-networks.component.scss']
 })
 export class SocialNetworksComponent {
-  @Input() profiles: Profile[] = [];
+  basics$: Observable<Basics> = this.resumeService.basics$;
   @Input() iconsOnly = false;
 
+  constructor(private readonly resumeService: ResumeService) {}
   // Icon mapping for social networks
-  private networkIcons: Record<string, IconDefinition> = {
+  private readonly networkIcons: Record<string, IconDefinition> = {
     'GitHub': faGithub,
     'LinkedIn': faLinkedin,
     'Twitter': faTwitter,

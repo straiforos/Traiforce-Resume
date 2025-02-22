@@ -4,8 +4,6 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ResumeComponent } from './resume/resume.component';
 import { InterestsGridComponent } from './interests-grid/interests-grid.component';
-import { interestsResolver } from './interests-grid/interests.resolver';
-import { INTERESTS_SECTION } from './interests-grid/interests.constants';
 
 export const routes: Routes = [
   {
@@ -28,19 +26,10 @@ export const routes: Routes = [
     title: 'Portfolio',
     component: PortfolioComponent
   },
-  // TODO style so the interests are centered in the page.
   {
     path: 'hobbies',
-    title: INTERESTS_SECTION.title,
-    component: InterestsGridComponent,
-    resolve: {
-      interests: interestsResolver
-    },
-    data: {
-      title: INTERESTS_SECTION.title,
-      subtitle: INTERESTS_SECTION.subtitle,
-      showHeader: true
-    }
+    title: 'Personal Interests',
+    component: InterestsGridComponent
   },
   {
     path: '**',

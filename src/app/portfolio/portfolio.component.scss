@@ -12,42 +12,7 @@
   }
 }
 
-.mat-mdc-card {
-  background: var(--surface-lighter);
-  transition: all 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.75rem;
 
-  &:hover {
-    transform: translateY(-0.125rem);
-    box-shadow: var(--mat-elevation-level3);
-    background: var(--surface-lightest);
-  }
-}
-
-.mat-mdc-card-header {
-  padding: 1rem 1rem 0;
-}
-
-.mat-mdc-card-title {
-  color: var(--primary-color);
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.mat-mdc-card-subtitle {
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-}
-
-.mat-mdc-card-content {
-  padding: 0 1rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
 
 .meta {
   margin-bottom: 1.5rem;
@@ -89,6 +54,6 @@
 
   // Link button should use the whole footer.
   a {
-    width: 100%
+    width: 100%;
   }
 }

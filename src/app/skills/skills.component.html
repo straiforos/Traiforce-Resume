@@ -1,11 +1,24 @@
-<div class="skills-grid">
-  <div *ngFor="let skill of skills" class="skill-card">
-    <h3>{{ skill.name }}</h3>
-    <div class="level">{{ skill.level }}</div>
-    <div class="keywords">
-      <span *ngFor="let keyword of skill.keywords" class="keyword">
-        {{ keyword }}
-      </span>
-    </div>
-  </div>
+<!-- Skills Section -->
+<app-section-header
+  title="Skills"
+  subtitle="Technologies and tools I work with">
+</app-section-header>
+
+<div class="skills-grid" *ngIf="skills$ | async as skills">
+  <mat-card *ngFor="let skill of skills" class="skill-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ skill.name }}</mat-card-title>
+        <mat-card-subtitle>{{ skill.level }}</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-chip-set>
+        <mat-chip *ngFor="let keyword of skill.keywords">
+          {{ keyword }}
+        </mat-chip>
+      </mat-chip-set>
+    </mat-card-content>
+  </mat-card>
 </div>
