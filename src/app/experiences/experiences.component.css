@@ -4,7 +4,7 @@
   gap: 1.5rem;
 
   app-experience {
-    border-bottom: 1px solid var(--surface-lightest);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
     padding-bottom: 1.5rem;
 
     &:last-child {

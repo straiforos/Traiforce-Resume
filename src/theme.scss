@@ -46,7 +46,7 @@ html {
 // Define CSS custom properties for use in components
 :root {
   // Theme colors using M3 color tokens
-  --md-sys-color-primary: #{mat.get-theme-color($theme, primary, 80)};
+  --md-sys-color-primary: #{mat.get-theme-color($theme, primary, 70)};
   --md-sys-color-primary-container: #{mat.get-theme-color($theme, primary, 90)};
   --md-sys-color-on-primary: #{mat.get-theme-color($theme, primary, 100)};
   --md-sys-color-on-primary-container: #{mat.get-theme-color($theme, primary, 10)};
