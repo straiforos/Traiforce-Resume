@@ -1,38 +1,45 @@
 <app-section-header
   title="Portfolio"
-  subtitle="Explore my recent projects and contributions">
+  subtitle="Explore my recent projects and contributions"
+>
 </app-section-header>
 
-<div class="grid" *ngIf="(projects$ | async) as projects">
-  <div *ngFor="let project of projects" class="project-card">
-    <div class="project-content">
-      <h2>{{ project.name }}</h2>
-      <p class="description">{{ project.description }}</p>
+<div class="grid" *ngIf="projects$ | async as projects">
+  <mat-card *ngFor="let project of projects">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ project.name }}</mat-card-title>
+        <mat-card-subtitle>{{ project.description }}</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="meta">
+          <div class="roles">
+            <strong>Role:</strong>
+            <span *ngFor="let role of project.role" class="role-tag">
+              {{ role }}
+            </span>
+          </div>
+          <div class="entity">
+            <strong>Entity:</strong> {{ project.entity }}
+          </div>
+        </div>
 
-      <div class="meta">
-        <div class="roles">
-          <strong>Role:</strong>
-          <span *ngFor="let role of project.role" class="role-tag">
-            {{ role }}
+        <div class="technologies">
+          <span *ngFor="let keyword of project.keywords" class="tech-tag">
+            {{ keyword }}
           </span>
         </div>
-        <div class="entity">
-          <strong>Entity:</strong> {{ project.entity }}
-        </div>
-      </div>
-
-      <div class="technologies">
-        <span *ngFor="let keyword of project.keywords" class="tech-tag">
-          {{ keyword }}
-        </span>
-      </div>
-
-      <a [href]="project.url"
-         target="_blank"
-         class="project-link"
-         *ngIf="project.url">
-        View Project
-      </a>
-    </div>
-  </div>
+    </mat-card-content>
+    <mat-card-footer>
+          <a
+          [href]="project.url"
+          target="_blank"
+          class="project-link"
+          *ngIf="project.url"
+        >
+          View Project
+        </a>
+    </mat-card-footer>
+  </mat-card>
 </div>

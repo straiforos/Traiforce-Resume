@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ResumeService } from 'resume';
-import { Project } from 'resume';
+import { ResumeService, Project } from 'resume';
 import { Observable } from 'rxjs';
 import { SectionHeaderComponent } from '../shared/section-header/section-header.component';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent],
+  imports: [CommonModule, SectionHeaderComponent, MatCardModule],
   templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.scss']
+  styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent {
   projects$: Observable<Project[]>;
