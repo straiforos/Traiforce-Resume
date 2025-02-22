@@ -1,84 +1,25 @@
 @use '../../styles/breakpoints' as breakpoints;
 
-
-.company-info {
-  margin-bottom: 1rem;
-
-  .company-name {
-    color: var(--md-sys-color-on-surface-variant);
-    font-size: 0.9rem;
-  }
-}
-
-.position {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--md-sys-color-primary);
-  margin-bottom: 0.5rem;
-}
-
-.duration {
-  color: var(--md-sys-color-on-surface-variant);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
 .company-link {
-  color: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-tertiary);
   text-decoration: none;
   transition: all 0.3s ease;
+  font-size: 1rem;
+  display: inline-block;
 
   &:hover {
-    color: var(--md-sys-color-secondary-container);
-  }
-}
-
-.description {
-  margin-top: 1rem;
-  color: var(--md-sys-color-on-surface);
-  line-height: 1.6;
-}
-
-.experience-date {
-  color: var(--md-sys-color-on-surface-variant);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-h3 {
-  margin: 0;
-  color: var(--md-sys-color-primary);
-  font-size: 1.25rem;
-}
-
-h4 {
-  margin: 0.5rem 0;
-  color: var(--md-sys-color-on-surface-variant);
-
-  a {
-    color: var(--md-sys-color-secondary);
-    text-decoration: none;
-    transition: all 0.3s ease;
-
-    &:hover {
-      color: var(--md-sys-color-secondary-container);
-    }
+    color: var(--md-sys-color-tertiary-container);
   }
 }
 
 .highlights {
-  margin: 1rem 0 0;
+  margin: 0;
   padding-left: 1.5rem;
 
   li {
     margin-bottom: 0.5rem;
     color: var(--md-sys-color-on-surface);
     line-height: 1.6;
-    font-size: 1.1rem;
-
-    @include breakpoints.mobile {
-      font-size: 0.9rem;
-    }
 
     &:last-child {
       margin-bottom: 0;
