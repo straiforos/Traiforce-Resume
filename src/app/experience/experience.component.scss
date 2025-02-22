@@ -1,42 +1,67 @@
 @use '../../styles/breakpoints' as breakpoints;
 
-.experience-content {
-  background: var(--surface-lighter);
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: var(--mat-elevation-level1);
-  transition: all 0.3s ease;
 
-  &:hover {
-    transform: translateY(-0.125rem);
-    box-shadow: var(--mat-elevation-level3);
-    background: var(--surface-lightest);
+.company-info {
+  margin-bottom: 1rem;
+
+  .company-name {
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.9rem;
   }
 }
 
+.position {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--md-sys-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.duration {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.company-link {
+  color: var(--md-sys-color-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: var(--md-sys-color-secondary-container);
+  }
+}
+
+.description {
+  margin-top: 1rem;
+  color: var(--md-sys-color-on-surface);
+  line-height: 1.6;
+}
+
 .experience-date {
-  color: var(--text-secondary);
+  color: var(--md-sys-color-on-surface-variant);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
 
 h3 {
   margin: 0;
-  color: var(--primary-color);
+  color: var(--md-sys-color-primary);
   font-size: 1.25rem;
 }
 
 h4 {
   margin: 0.5rem 0;
-  color: var(--text-secondary);
+  color: var(--md-sys-color-on-surface-variant);
 
   a {
-    color: var(--accent-color);
+    color: var(--md-sys-color-secondary);
     text-decoration: none;
     transition: all 0.3s ease;
 
     &:hover {
-      color: var(--accent-lighter-color);
+      color: var(--md-sys-color-secondary-container);
     }
   }
 }
@@ -47,7 +72,7 @@ h4 {
 
   li {
     margin-bottom: 0.5rem;
-    color: var(--text-primary);
+    color: var(--md-sys-color-on-surface);
     line-height: 1.6;
     font-size: 1.1rem;
 

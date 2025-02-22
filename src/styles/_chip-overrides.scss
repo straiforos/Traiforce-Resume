@@ -11,25 +11,32 @@
     --mdc-chip-label-padding-left: 0.75rem;
     --mdc-chip-label-padding-right: 0.75rem;
     font-size: 0.9rem;
+    border-radius: 1rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
 
     &.mat-mdc-standard-chip {
       &.mat-accent {
-        --mdc-chip-elevated-container-color: var(--accent-color);
-        --mdc-chip-label-text-color: var(--surface-default);
+        --mdc-chip-elevated-container-color: var(--md-sys-color-secondary);
+        --mdc-chip-label-text-color: var(--md-sys-color-on-secondary);
 
         &:hover {
-          --mdc-chip-elevated-container-color: var(--accent-lighter-color);
+          --mdc-chip-elevated-container-color: var(--md-sys-color-secondary-container);
+          --mdc-chip-label-text-color: var(--md-sys-color-on-secondary-container);
         }
       }
 
       // Default style for tech chips
       &:not(.mat-accent) {
-        --mdc-chip-elevated-container-color: var(--surface-default);
-        --mdc-chip-label-text-color: var(--text-secondary);
+        --mdc-chip-elevated-container-color: var(--md-sys-color-surface);
+        --mdc-chip-label-text-color: var(--md-sys-color-on-surface-variant);
         font-size: 0.85rem;
 
         &:hover {
-          --mdc-chip-elevated-container-color: var(--surface-lighter);
+          --mdc-chip-elevated-container-color: var(--md-sys-color-surface-container);
         }
       }
     }
@@ -38,5 +45,26 @@
   .mat-mdc-chip-set {
     --mdc-chip-spacing-x: 0.25rem;
     --mdc-chip-spacing-y: 0.25rem;
+  }
+
+  // Primary chips (for skills)
+  .skill-chip {
+    --mdc-chip-elevated-container-color: var(--md-sys-color-secondary);
+    --mdc-chip-label-text-color: var(--md-sys-color-on-secondary);
+  }
+
+  .skill-chip:hover {
+    --mdc-chip-elevated-container-color: var(--md-sys-color-secondary-container);
+    --mdc-chip-label-text-color: var(--md-sys-color-on-secondary-container);
+  }
+
+  // Secondary chips (for dates, locations)
+  .info-chip {
+    --mdc-chip-elevated-container-color: var(--md-sys-color-surface);
+    --mdc-chip-label-text-color: var(--md-sys-color-on-surface-variant);
+  }
+
+  .info-chip:hover {
+    --mdc-chip-elevated-container-color: var(--md-sys-color-surface-container);
   }
 }

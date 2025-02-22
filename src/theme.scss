@@ -51,23 +51,40 @@ html {
   --md-sys-color-on-primary: #{mat.get-theme-color($theme, primary, 100)};
   --md-sys-color-on-primary-container: #{mat.get-theme-color($theme, primary, 10)};
 
+  // Secondary colors from the palette directly
+  --md-sys-color-secondary: #{map.get(theme-colors.$secondary-palette, 40)};
+  --md-sys-color-secondary-container: #{map.get(theme-colors.$secondary-palette, 90)};
+  --md-sys-color-on-secondary: #{map.get(theme-colors.$secondary-palette, 100)};
+  --md-sys-color-on-secondary-container: #{map.get(theme-colors.$secondary-palette, 10)};
+
   --md-sys-color-tertiary: #{mat.get-theme-color($theme, tertiary, 40)};
   --md-sys-color-tertiary-container: #{mat.get-theme-color($theme, tertiary, 90)};
   --md-sys-color-on-tertiary: #{mat.get-theme-color($theme, tertiary, 100)};
   --md-sys-color-on-tertiary-container: #{mat.get-theme-color($theme, tertiary, 10)};
 
-  --md-sys-color-surface: #{mat.get-theme-color($theme, surface)};
-  --md-sys-color-surface-dim: #{mat.get-theme-color($theme, surface-dim)};
-  --md-sys-color-surface-bright: #{mat.get-theme-color($theme, surface-bright)};
-  --md-sys-color-surface-container: #{mat.get-theme-color($theme, surface-container)};
-  --md-sys-color-surface-container-low: #{mat.get-theme-color($theme, surface-container-low)};
-  --md-sys-color-surface-container-high: #{mat.get-theme-color($theme, surface-container-high)};
-  --md-sys-color-surface-container-highest: #{mat.get-theme-color($theme, surface-container-highest)};
+  // Surface system with distinct elevation levels
+  --md-sys-color-surface: #{mat.get-theme-color($theme, neutral, 6)}; // Base surface
+  --md-sys-color-surface-dim: #{mat.get-theme-color($theme, neutral, 4)}; // Lowest elevation
+  --md-sys-color-surface-container-lowest: #{mat.get-theme-color($theme, neutral, 10)}; // Very subtle elevation
+  --md-sys-color-surface-container-low: #{mat.get-theme-color($theme, neutral, 12)}; // Subtle elevation
+  --md-sys-color-surface-container: #{mat.get-theme-color($theme, neutral, 17)}; // Default container
+  --md-sys-color-surface-container-high: #{mat.get-theme-color($theme, neutral, 22)}; // Higher elevation
+  --md-sys-color-surface-container-highest: #{mat.get-theme-color($theme, neutral, 24)}; // Highest elevation
+  --md-sys-color-surface-bright: #{mat.get-theme-color($theme, neutral, 30)}; // Brightest surface
 
-  --md-sys-color-on-surface: #{mat.get-theme-color($theme, on-surface)};
-  --md-sys-color-on-surface-variant: #{mat.get-theme-color($theme, on-surface-variant)};
-  --md-sys-color-outline: #{mat.get-theme-color($theme, outline)};
-  --md-sys-color-outline-variant: #{mat.get-theme-color($theme, outline-variant)};
+  // On colors for proper contrast
+  --md-sys-color-on-surface: #{mat.get-theme-color($theme, neutral, 90)};
+  --md-sys-color-on-surface-variant: #{mat.get-theme-color($theme, neutral-variant, 80)};
+
+  // Outline colors for borders and dividers
+  --md-sys-color-outline: #{mat.get-theme-color($theme, neutral-variant, 60)};
+  --md-sys-color-outline-variant: #{mat.get-theme-color($theme, neutral-variant, 30)};
+
+  // State layers for hover/focus states
+  --md-sys-state-hover-opacity: 0.08;
+  --md-sys-state-focus-opacity: 0.12;
+  --md-sys-state-pressed-opacity: 0.12;
+  --md-sys-state-dragged-opacity: 0.16;
 }
 
 // Global text styles

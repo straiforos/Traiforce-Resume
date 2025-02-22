@@ -10,8 +10,10 @@
       background-color: transparent;
 
       &:hover {
-        color: var(--accent-color);
         transform: translateY(-2px);
+        .social-icon {
+          color: var(--md-sys-color-secondary);
+        }
       }
 
       .social-icon {
@@ -26,10 +28,10 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  background-color: var(--surface-lighter);
+  background-color: var(--md-sys-color-surface-container);
   border-radius: 25px;
   text-decoration: none;
-  color: var(--text-primary);
+  color: var(--md-sys-color-on-surface);
   transition: all 0.3s ease;
 
   .social-icon {
@@ -41,9 +43,13 @@
   }
 
   &:hover {
-    background-color: var(--primary-color);
-    color: var(--surface-default);
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    .social-icon {
+      color: var(--md-sys-color-on-primary);
+    }
   }
 }
