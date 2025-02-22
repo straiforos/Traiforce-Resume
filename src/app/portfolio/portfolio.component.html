@@ -13,33 +13,31 @@
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content>
-        <div class="meta">
-          <div class="roles">
-            <strong>Role:</strong>
-            <span *ngFor="let role of project.role" class="role-tag">
-              {{ role }}
-            </span>
-          </div>
-          <div class="entity">
-            <strong>Entity:</strong> {{ project.entity }}
-          </div>
-        </div>
-
-        <div class="technologies">
-          <span *ngFor="let keyword of project.keywords" class="tech-tag">
-            {{ keyword }}
+      <div class="meta">
+        <div class="roles">
+          <strong>Role:</strong>
+          <span *ngFor="let role of project.role" class="role-tag">
+            {{ role }}
           </span>
         </div>
+        <div class="entity"><strong>Entity:</strong> {{ project.entity }}</div>
+      </div>
+
+      <div class="technologies">
+        <span *ngFor="let keyword of project.keywords" class="tech-tag">
+          {{ keyword }}
+        </span>
+      </div>
     </mat-card-content>
     <mat-card-footer>
-          <a
-          [href]="project.url"
-          target="_blank"
-          class="project-link"
-          *ngIf="project.url"
-        >
-          View Project
-        </a>
+      <a
+        mat-flat-button
+        [href]="project.url"
+        target="_blank"
+        *ngIf="project.url"
+      >
+        View Project
+      </a>
     </mat-card-footer>
   </mat-card>
 </div>

@@ -2,6 +2,7 @@
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
 @use 'sass:map';
+@use 'styles/button-overrides' as button;
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -24,13 +25,14 @@ $theme: mat.m2-define-dark-theme((
   )
 ));
 
+// Apply the theme
+@include mat.all-component-themes($theme);
+@include button.apply-button-overrides($theme);
+
 // Get the color config from the theme
 $color-config: mat.m2-get-color-config($theme);
 $foreground: map.get($color-config, 'foreground');
 $background: map.get($color-config, 'background');
-
-// Apply the theme
-@include mat.all-component-themes($theme);
 
 // Define CSS custom properties for use in components
 :root {
@@ -57,6 +59,9 @@ $background: map.get($color-config, 'background');
   // Other foreground colors
   --divider-color: rgba(255, 255, 255, 0.12);
   --icon-color: rgba(255, 255, 255, 0.6);
+
+  // Button colors
+  --mdc-filled-button-container-color: #{mat.m2-get-color-from-palette($accent)};
 }
 
 // Global text styles

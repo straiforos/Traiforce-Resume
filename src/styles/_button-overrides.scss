@@ -1,0 +1,19 @@
+@use '@angular/material' as mat;
+
+// Create custom button defaults
+$button-theme-overrides: (
+  border-radius: 0.3125rem,
+);
+
+@mixin apply-button-overrides($theme) {
+  @include mat.button-theme($theme);
+
+  .mat-mdc-button,
+  .mat-mdc-raised-button,
+  .mat-mdc-outlined-button,
+  .mat-mdc-unelevated-button {
+    --mdc-shape-small: 0.3125rem !important;
+    --mdc-shape-medium: 0.3125rem !important;
+    --mdc-shape-large: 0.3125rem !important;
+  }
+}

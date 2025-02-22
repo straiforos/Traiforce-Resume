@@ -13,5 +13,9 @@
     <fa-icon [icon]="locationIcon"></fa-icon>
     <span>{{ basics.location.city }}, {{ basics.location.region }}</span>
   </div>
-  <ng-content></ng-content>
+  <div class="actions">
+    <button mat-raised-button color="primary">
+      <ng-content></ng-content>
+    </button>
+  </div>
 </section>

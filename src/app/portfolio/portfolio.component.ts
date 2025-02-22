@@ -4,11 +4,17 @@ import { ResumeService, Project } from 'resume';
 import { Observable } from 'rxjs';
 import { SectionHeaderComponent } from '../shared/section-header/section-header.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent, MatCardModule],
+  imports: [
+    CommonModule,
+    SectionHeaderComponent,
+    MatCardModule,
+    MatButtonModule,
+  ],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
 })
