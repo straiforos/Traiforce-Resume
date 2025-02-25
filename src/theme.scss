@@ -57,7 +57,8 @@ html {
   --md-sys-color-on-secondary: #{map.get(theme-colors.$secondary-palette, 100)};
   --md-sys-color-on-secondary-container: #{map.get(theme-colors.$secondary-palette, 10)};
 
-  --md-sys-color-tertiary: #{mat.get-theme-color($theme, tertiary, 60)};
+  // WCAG AAA dictates for the menu access on hover that we use a lighter color when used on the   --md-sys-color-surface-container
+  --md-sys-color-tertiary: #{mat.get-theme-color($theme, tertiary, 80)};
   --md-sys-color-tertiary-container: #{mat.get-theme-color($theme, tertiary, 90)};
   --md-sys-color-on-tertiary: #{mat.get-theme-color($theme, tertiary, 100)};
   --md-sys-color-on-tertiary-container: #{mat.get-theme-color($theme, tertiary, 10)};
